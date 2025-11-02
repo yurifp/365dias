@@ -41,9 +41,9 @@ async function loadPolaroidSVG(){
     const ns = 'http://www.w3.org/2000/svg';
     const img = document.createElementNS(ns, 'image');
     img.setAttribute('x', '11');
-    img.setAttribute('y', '12');
-    img.setAttribute('width', '207');
-    img.setAttribute('height', '178');
+    img.setAttribute('y', '0');
+    img.setAttribute('width', '209');
+    img.setAttribute('height', '235');
     img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
     img.setAttribute('opacity', '1');
     img.setAttributeNS(XLINK, 'href', '');
