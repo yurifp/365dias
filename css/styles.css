@@ -158,7 +158,7 @@ body::after{
 /* Odometer back on — stable, cursive, and non-clipping */
 .date-chip{ font-family: 'La Belle Aurore', cursive; }
 .date-inner{ display:flex; align-items:center; gap:2px; }
-.sep{ color:#111; opacity:1; font-size: clamp(18px, 5vw, 30px); line-height: 1; }
+.sep{ color:#111; opacity:1; font-size: 31px; line-height: 1; }
 .odo{ display:flex; gap:0px; }
 .digit-window{ width: 1.4em; height: 1.6em; overflow:hidden; display:grid; place-items:center; }
 .digit-col{ display:flex; flex-direction:column; transform: translateY(0); will-change: transform; }
