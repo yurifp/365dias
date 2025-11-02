@@ -135,10 +135,27 @@ body::after{
 .section-head p{ margin:0; color:var(--muted) }
 
 /* Fixed HUD for frame content */
-.frame-hud{ position:fixed; left:0; right:0; top:24px; z-index:9; display:grid; place-items:center; pointer-events:none; }
-.frame-inner{ background: rgba(20,22,27,.48); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,.06); box-shadow: var(--shadow); border-radius: 14px; padding: 10px 14px; opacity: 1; transform: translateY(0); }
-.frame-title{ margin:0; font-size: clamp(14px, 2.8vw, 18px); font-weight:700 }
-.frame-desc{ margin:2px 0 0; font-size:12px; color: var(--muted) }
+/* Sticker HUD - movable and always on top */
+.frame-hud{ position: fixed; top: var(--hud-top, 24px); left: var(--hud-left, 24px); z-index: 9999; pointer-events: none; }
+/* Tip: move per take using data attrs set by JS, e.g.
+  .frame-hud[data-take="02"]{ --hud-top: 40px; --hud-left: 80px }
+  .frame-hud[data-take="10"]{ --hud-top: 20px; --hud-left: calc(50% - 60px) }
+*/
+/* Sticker-only HUD: no panel */
+.frame-inner{ background: transparent; backdrop-filter: none; border:none; box-shadow:none; border-radius:0; padding:0; opacity:1; transform:none; }
+.frame-sticker{ display:block; position: relative; width: clamp(40px, 12vw, 84px); height:auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); transform-origin: center; pointer-events: none; }
+
+.sticker-take-01{ 
+  width: 80%; transform: translateY(2px) rotate(-6deg); 
+}
+
+.sticker-take-02{ 
+  width: 80%;
+  position: relative;
+  top: 375px; 
+}
+
+
 
 /* Fixed content deck (polaroid) */
 .frame-deck{ position:fixed; left:50%; transform: translateX(-50%); top: 131px; z-index:8; width:min(84vw, 520px); }
