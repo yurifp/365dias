@@ -101,9 +101,8 @@ body::after{
   width:6px; height:20px; border-radius:3px; background: var(--accent);
   box-shadow: 0 0 10px rgba(255,92,112,.9), 0 0 30px rgba(255,92,112,.4);
 }
-.progress-months{ display:flex; gap:0; list-style:none; padding:0; margin:0; width:min(960px, calc(100vw - 48px)); justify-content:space-between; }
-.progress-months li{ color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; opacity:.7 }
-.progress-months li.active{ color:var(--ink); opacity:1 }
+.progress-months{ display:none !important; }
+.progress-months li{ display:none !important; }
 
 /* Dot navigation */
 .dot-nav{ position:fixed; right:16px; top:50%; transform:translateY(-50%); z-index:11; }
@@ -150,13 +149,17 @@ body::after{
 .frame-card .frame-overlay{ display:none; }
 
 /* Date chip (MM / YYYY) */
-.date-chip{ position:fixed; top:24px; left:24px; z-index:12; pointer-events:none; }
-.date-inner{ display:flex; align-items:center; gap:10px; background: rgba(20,22,27,.6); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:8px 10px; box-shadow: var(--shadow); font-variant-numeric: tabular-nums; }
-.sep{ color: var(--muted); opacity:.8; }
+.date-chip{ position:fixed; top:633px; left:calc(50% - 116px); z-index:12; pointer-events:none; }
+.date-inner{ display:flex; align-items:center; gap:10px; background: transparent !important; backdrop-filter: none !important; border: none !important; border-radius:0 !important; padding:0 !important; box-shadow:none !important; font-variant-numeric: tabular-nums; }
+.sep{ color: #111; opacity:1; }
 .odo{ display:flex; gap:4px; }
 .digit-window{ width: 16px; height: 28px; overflow:hidden; display:grid; place-items:center; }
 .digit-col{ display:flex; flex-direction:column; transform: translateY(0); will-change: transform; }
-.digit{ height:28px; line-height:28px; font-weight:700; font-size:18px; color: var(--ink); text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+.digit{ height:28px; line-height:28px; font-weight:700; font-size:18px; color: #111; text-shadow: none; }
+
+.date-chip {
+  font-family: 'La Belle Aurore', cursive;
+}
 
 /* Timeline */
 .section-timeline .timeline-grid{ display:grid; grid-template-columns: 1fr; gap:20px; width:min(980px, 100%); margin:32px auto 0; }
