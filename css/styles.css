@@ -142,23 +142,31 @@ body::after{
 
 /* Fixed content deck (polaroid) */
 .frame-deck{ position:fixed; left:50%; transform: translateX(-50%); bottom: 128px; z-index:8; width:min(84vw, 520px); }
+.frame-card{ position: relative; }
 .frame-card img{ width:100%; display:block; }
 .frame-card svg{ width:100%; height:auto; display:block; }
 .frame-card .polaroid-wrap{ position:relative; }
 .frame-card .photo{ display:none; }
 .frame-card .frame-overlay{ display:none; }
 
-/* Date chip (MM / YYYY) */
-.date-chip{ position:fixed; top:633px; left:calc(50% - 116px); z-index:12; pointer-events:none; }
-.date-inner{ display:flex; align-items:center; gap:10px; background: transparent !important; backdrop-filter: none !important; border: none !important; border-radius:0 !important; padding:0 !important; box-shadow:none !important; font-variant-numeric: tabular-nums; }
-.sep{ color: #111; opacity:1; }
-.odo{ display:flex; gap:4px; }
-.digit-window{ width: 16px; height: 28px; overflow:hidden; display:grid; place-items:center; }
-.digit-col{ display:flex; flex-direction:column; transform: translateY(0); will-change: transform; }
-.digit{ height:28px; line-height:28px; font-weight:700; font-size:18px; color: #111; text-shadow: none; }
+/* Date chip over the polaroid frame (inside the card, responsive) */
+.date-chip{ position:absolute; left:50%; transform: translateX(-50%); z-index:12; pointer-events:none; }
+/* anchored to card bottom white area */
+.frame-card .date-chip{ bottom: 24%; }
+.date-text{ display:none; }
 
-.date-chip {
-  font-family: 'La Belle Aurore', cursive;
+/* Odometer back on — stable, cursive, and non-clipping */
+.date-chip{ font-family: 'La Belle Aurore', cursive; }
+.date-inner{ display:flex; align-items:center; gap:8px; }
+.sep{ color:#111; opacity:1; font-size: clamp(18px, 5vw, 30px); line-height: 1; }
+.odo{ display:flex; gap:6px; }
+.digit-window{ width: 1.4em; height: 1.6em; overflow:hidden; display:grid; place-items:center; }
+.digit-col{ display:flex; flex-direction:column; transform: translateY(0); will-change: transform; }
+.digit{ display:block; height: 1.6em; line-height: 1.6em; font-weight:700; font-size: clamp(18px, 5vw, 30px); color:#111; text-shadow:none; -webkit-font-smoothing: antialiased; }
+
+/* Keep a stable, legible numeric font for the odometer */
+.date-chip{ 
+  font-family: 'La Belle Aurore', cursive; 
 }
 
 /* Timeline */

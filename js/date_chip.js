@@ -55,7 +55,29 @@ export function initDateChip(driver){
       </div>
     </div>
   `;
-  document.body.appendChild(chip);
+  // Handwritten simple text layer (preferred for visual fidelity)
+  const textLayer = document.createElement('div');
+  textLayer.className = 'date-text';
+  chip.appendChild(textLayer);
+  // Try to mount inside the polaroid card so it travels with the frame
+  function mountIntoCard(){
+    const card = document.querySelector('.frame-card');
+    if (card && chip.parentElement !== card){
+      card.appendChild(chip);
+      return true;
+    }
+    return false;
+  }
+  if (!mountIntoCard()){
+    // Fallback: append to body now and migrate when the card becomes available
+    document.body.appendChild(chip);
+    const mo = new MutationObserver(()=>{
+      if (mountIntoCard()) mo.disconnect();
+    });
+    mo.observe(document.documentElement, { childList:true, subtree:true });
+    // Also attempt once on next frame in case card is created right after
+    requestAnimationFrame(mountIntoCard);
+  }
 
   // Fill columns 0..9
   chip.querySelectorAll('.digit-col').forEach(col => {
@@ -77,8 +99,12 @@ export function initDateChip(driver){
 
   function setDigit(col, value){
     value = Math.max(0, Math.min(9, value|0));
+    // Use the actual digit row height for perfect stepping (avoids clipping when
+    // font metrics make the visible row differ from the window height)
+    const firstDigit = col.querySelector('.digit');
     const windowEl = col.parentElement; // .digit-window
-    const h = windowEl.getBoundingClientRect().height || 28;
+    const h = (firstDigit && firstDigit.getBoundingClientRect().height) ||
+              (windowEl && windowEl.getBoundingClientRect().height) || 28;
     const y = -value * h;
     if (window.anime){
       anime({ targets: col, translateY: y, duration: 360, easing: 'easeOutCubic' });
@@ -118,14 +144,25 @@ export function initDateChip(driver){
     const yStr = String(yy).padStart(4,'0');
     const y0 = +yStr[0], y1 = +yStr[1], y2 = +yStr[2], y3 = +yStr[3];
 
-    if (dT !== prev.dT) setDigit(ddCols[0], dT), prev.dT = dT;
-    if (dU !== prev.dU) setDigit(ddCols[1], dU), prev.dU = dU;
-    if (mT !== prev.mT) setDigit(mmCols[0], mT), prev.mT = mT;
-    if (mU !== prev.mU) setDigit(mmCols[1], mU), prev.mU = mU;
-    if (y0 !== prev.y0) setDigit(yyCols[0], y0), prev.y0 = y0;
-    if (y1 !== prev.y1) setDigit(yyCols[1], y1), prev.y1 = y1;
-    if (y2 !== prev.y2) setDigit(yyCols[2], y2), prev.y2 = y2;
-    if (y3 !== prev.y3) setDigit(yyCols[3], y3), prev.y3 = y3;
+    if (ddCols.length){
+      if (dT !== prev.dT) setDigit(ddCols[0], dT), prev.dT = dT;
+      if (dU !== prev.dU) setDigit(ddCols[1], dU), prev.dU = dU;
+    }
+    if (mmCols.length){
+      if (mT !== prev.mT) setDigit(mmCols[0], mT), prev.mT = mT;
+      if (mU !== prev.mU) setDigit(mmCols[1], mU), prev.mU = mU;
+    }
+    if (yyCols.length){
+      if (y0 !== prev.y0) setDigit(yyCols[0], y0), prev.y0 = y0;
+      if (y1 !== prev.y1) setDigit(yyCols[1], y1), prev.y1 = y1;
+      if (y2 !== prev.y2) setDigit(yyCols[2], y2), prev.y2 = y2;
+      if (y3 !== prev.y3) setDigit(yyCols[3], y3), prev.y3 = y3;
+    }
+    // Update simple text layer (handwritten look)
+    const ddStr = String(dd).padStart(2, '0');
+    const mmStr = String(mm).padStart(2, '0');
+    const out = `${ddStr} / ${mmStr} / ${yy}`;
+    if (textLayer.textContent !== out) textLayer.textContent = out;
   }
 
   driver.on((p)=>{
