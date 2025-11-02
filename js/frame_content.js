@@ -2,7 +2,10 @@
 // Exports: initFrameContent(driver), setFrameContentMap(array)
 
 let FRAMES = null;     // array de 52 itens: { title, caption, image, date? }
-let deck = null;       // container
+let deck = null;       // container fixo
+let card = null;       // único card polaroid reutilizado
+let svgEl = null;      // SVG da moldura (inline)
+let photoNode = null;  // <image> dentro do SVG
 let current = -1;      // índice atual
 let ready = false;     // se init foi chamado
 
@@ -24,57 +27,107 @@ function buildDefaultFrames(){
   return frames;
 }
 
-function ensureDeck(){
+async function loadPolaroidSVG(){
+  // Carrega e inlina o SVG do usuário
+  try{
+    const res = await fetch('./assets/images/polaroid.svg', { cache:'no-store' });
+    const txt = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(txt, 'image/svg+xml');
+    const svg = doc.querySelector('svg');
+    if (!svg) throw new Error('SVG inválido');
+    // Cria o nó <image> na região útil (x=11,y=12,w=207,h=178) com cover
+    const XLINK = 'http://www.w3.org/1999/xlink';
+    const ns = 'http://www.w3.org/2000/svg';
+    const img = document.createElementNS(ns, 'image');
+    img.setAttribute('x', '11');
+    img.setAttribute('y', '12');
+    img.setAttribute('width', '207');
+    img.setAttribute('height', '178');
+    img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+    img.setAttribute('opacity', '1');
+    img.setAttributeNS(XLINK, 'href', '');
+    // Insere a imagem como primeira camada, moldura por cima
+    if (svg.firstChild) svg.insertBefore(img, svg.firstChild);
+    else svg.appendChild(img);
+    return { svg, img };
+  }catch(err){
+    console.warn('[polaroid] Falha ao carregar SVG, caindo no fallback:', err);
+    return { svg: null, img: null };
+  }
+}
+
+async function ensureDeckAndCard(){
   if (!deck){
     deck = document.createElement('div');
     deck.className = 'frame-deck';
     deck.setAttribute('aria-live', 'polite');
     document.body.appendChild(deck);
   }
+  if (!card){
+    card = document.createElement('div');
+    card.className = 'frame-card';
+    // Carrega e injeta o SVG do usuário como a ÚNICA hub da polaroid
+    const loaded = await loadPolaroidSVG();
+    svgEl = loaded.svg;
+    photoNode = loaded.img;
+    if (svgEl) card.appendChild(svgEl);
+    // Metadados (fora do SVG)
+    const title = document.createElement('h3');
+    title.className = 'title';
+    const caption = document.createElement('span');
+    caption.className = 'caption';
+    card.appendChild(title);
+    card.appendChild(caption);
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(10px) scale(0.98)';
+    deck.appendChild(card);
+    // animate in once
+    if (window.anime){
+      anime({ targets: card, opacity:[0,1], translateY:[10,0], scale:[0.98,1], duration:520, easing:'easeOutQuad' });
+    } else {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    }
+  }
 }
 
-function createCard(item){
-  const title = item.title || '';
-  const caption = item.caption || '';
-  const img = item.image || '';
-  const card = document.createElement('div');
-  card.className = 'polaroid frame-card';
-  card.innerHTML = `
-    <img alt="${title || caption}" src="${img}" />
-    ${title ? `<h3 class="title">${title}</h3>` : ''}
-    ${caption ? `<span class="caption">${caption}</span>` : ''}
-  `;
-  return card;
-}
-
-function show(i){
+async function show(i){
   const frames = FRAMES || buildDefaultFrames();
   const n = frames.length || 52;
   const idx = Math.min(n-1, Math.max(0, i|0));
   if (idx === current) return;
   current = idx;
-  ensureDeck();
+  await ensureDeckAndCard();
+
   const item = frames[idx] || frames[0];
+  const titleEl = card.querySelector('.title');
+  const captionEl = card.querySelector('.caption');
 
-  const next = createCard(item);
-  next.style.opacity = '0';
-  next.style.transform = 'translateY(10px) scale(0.98)';
-  deck.appendChild(next);
+  // Atualiza título e legenda
+  titleEl.textContent = item.title || '';
+  captionEl.textContent = item.caption || '';
+  titleEl.style.display = item.title ? '' : 'none';
+  captionEl.style.display = item.caption ? '' : 'none';
 
-  if (window.anime){
-    anime({ targets: next, opacity:[0,1], translateY:[10,0], scale:[0.98,1], duration:520, easing:'easeOutQuad' });
-  } else {
-    next.style.opacity = '1';
-    next.style.transform = 'none';
-  }
-
-  const cards = deck.querySelectorAll('.frame-card');
-  if (cards.length > 1){
-    const prev = cards[0];
-    if (window.anime){
-      anime({ targets: prev, opacity:[1,0], translateY:[0,-10], duration:360, easing:'easeOutQuad', complete(){ prev.remove(); } });
-    } else {
-      prev.remove();
+  // Troca de imagem dentro do SVG (xMidYMid slice) com pequena transição
+  const nextSrc = item.image || '';
+  if (photoNode && nextSrc){
+    const XLINK = 'http://www.w3.org/1999/xlink';
+    const currentHref = photoNode.getAttribute('href') || photoNode.getAttributeNS(XLINK, 'href') || '';
+    if (currentHref !== nextSrc){
+      if (window.anime){
+        anime({ targets: photoNode, opacity:[1,0], duration:140, easing:'easeOutQuad', complete(){
+          photoNode.setAttribute('href', nextSrc);
+          photoNode.setAttributeNS(XLINK, 'href', nextSrc);
+          anime({ targets: photoNode, opacity:[0,1], duration:220, easing:'easeOutQuad' });
+        }});
+      } else {
+        photoNode.setAttribute('opacity', '0');
+        photoNode.setAttribute('href', nextSrc);
+        photoNode.setAttributeNS(XLINK, 'href', nextSrc);
+        requestAnimationFrame(()=>{ photoNode.setAttribute('opacity', '1'); });
+      }
     }
   }
 }
