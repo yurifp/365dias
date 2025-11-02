@@ -27,6 +27,9 @@ export function initScrollDriver({ onProgress } = {}){
   // Interaction mapping
   let touchStartY = null;
   let touchLastY = null;
+  // Expose simple input markers for other modules (e.g., snap behavior)
+  window.__virtualScrollTouchActive = false;
+  window.__virtualScrollLastInput = 'none';
 
   // Target: 52 steps (13 months * 4 sub-takes)
   const MONTHS = 13;
@@ -36,10 +39,11 @@ export function initScrollDriver({ onProgress } = {}){
   function wheelHandler(e){
     // prevent native scroll and map delta to progress
     e.preventDefault();
+    window.__virtualScrollLastInput = 'wheel';
     const delta = (e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY) || 0; // lines->px
-    // Map pixels to progress with sensitivity tuned for 52 steps over ~1.5 viewport heights
-    const vh = Math.max(400, Math.min(1200, innerHeight));
-    const perPixel = 1 / (vh * 1.5 * TOTAL_TAKES); // smaller -> smoother
+    // Sensibilidade por "pixels por take": ~180 px por take no wheel
+    const PIXELS_PER_TAKE_WHEEL = 180;
+    const perPixel = 1 / (PIXELS_PER_TAKE_WHEEL * TOTAL_TAKES);
     p = clamp(p + delta * perPixel);
     emit();
   }
@@ -62,6 +66,8 @@ export function initScrollDriver({ onProgress } = {}){
   function touchStart(e){
     if (!e.touches || !e.touches.length) return;
     touchStartY = touchLastY = e.touches[0].clientY;
+    window.__virtualScrollTouchActive = true;
+    window.__virtualScrollLastInput = 'touch';
   }
   function touchMove(e){
     if (touchStartY == null) return;
@@ -69,12 +75,13 @@ export function initScrollDriver({ onProgress } = {}){
     const dy = touchLastY - y; // swipe up -> positive
     touchLastY = y;
     e.preventDefault();
-    const vh = Math.max(400, Math.min(1200, innerHeight));
-    const perPixel = 1 / (vh * 1.2 * TOTAL_TAKES);
+    // Sensibilidade: ~140 px por take no touch (mais responsivo no celular)
+    const PIXELS_PER_TAKE_TOUCH = 140;
+    const perPixel = 1 / (PIXELS_PER_TAKE_TOUCH * TOTAL_TAKES);
     p = clamp(p + dy * perPixel);
     emit();
   }
-  function touchEnd(){ touchStartY = touchLastY = null; }
+  function touchEnd(){ touchStartY = touchLastY = null; window.__virtualScrollTouchActive = false; }
 
   // Attach listeners (must be non-passive to prevent scroll)
   window.addEventListener('wheel', wheelHandler, { passive: false });

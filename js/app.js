@@ -49,12 +49,16 @@ function init(){
   // Optional: snap to nearest take when user stops scrolling for a moment
   (function installSnapToTake(){
     const MONTHS = 13, SUB_TAKES = 4, TOTAL_TAKES = MONTHS * SUB_TAKES; // 52
-    const SNAP_DELAY = 220; // ms after last input
+    const SNAP_DELAY = 320; // ms after last input (um pouco maior p/ touch)
     const EPS = 0.0025;     // tolerance to consider already on a boundary
     let tid;
     driver.on((p)=>{
       clearTimeout(tid);
       tid = setTimeout(()=>{
+        // Evita snap enquanto o usuário está com o dedo na tela
+        if (window.__virtualScrollTouchActive) return;
+        // Em mobile (input touch), não fazer snap para reduzir sensação de "voltar"
+        if (window.__virtualScrollLastInput === 'touch') return;
         const now = driver.get();
         const nearest = Math.round(now * TOTAL_TAKES) / TOTAL_TAKES;
         if (Math.abs(now - nearest) < EPS) return; // already close enough
