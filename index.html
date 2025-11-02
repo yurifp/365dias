@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>365 dias com você — Scrapbook</title>
+    <meta name="theme-color" content="#0b0d10" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- Background layer (WebGL starry night injected by JS) -->
+    <canvas id="bgParticles" aria-hidden="true"></canvas>
+
+    <!-- Fixed futuristic progress bar (animejs style) -->
+    <div class="progress-shell" role="progressbar" aria-label="Progresso da história" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="progress-track">
+        <div class="progress-fill"></div>
+        <div class="progress-indicator" aria-hidden="true"></div>
+      </div>
+      <ol class="progress-months" id="progressMonths" aria-hidden="true"></ol>
+    </div>
+
+    <!-- Lateral dot navigation (optional) -->
+    <nav class="dot-nav" aria-label="Seções">
+      <ul>
+        <li><a href="#cover" aria-label="Capa"></a></li>
+        <li><a href="#moments" aria-label="Momentos"></a></li>
+        <li><a href="#timeline" aria-label="Linha do tempo"></a></li>
+        <li><a href="#gallery" aria-label="Galeria"></a></li>
+        <li><a href="#final" aria-label="Mensagem final"></a></li>
+      </ul>
+    </nav>
+
+    <!-- Main container with vertical snap -->
+    <main class="snap-container">
+      <!-- Intro / Cover -->
+      <section id="cover" class="snap-section section-cover" data-label="Capa">
+        <div class="cover-center">
+          <svg id="heartSvg" class="heart-svg" viewBox="0 0 100 100" role="img" aria-label="Coração animado"></svg>
+        </div>
+      </section>
+
+      <!-- Momentos Felizes (nova seção para totalizar 5) -->
+      <section id="moments" class="snap-section section-moments" data-label="Momentos">
+        <header class="section-head" data-reveal>
+          <h2>Momentos Felizes</h2>
+          <p>Pequenas cenas que guardamos no coração.</p>
+        </header>
+        <div class="timeline-grid">
+          <article class="moment" data-reveal>
+            <div class="polaroid tilt">
+              <img src="./assets/images/momento_01.jpg" alt="Café da tarde" />
+              <span class="caption">Café da tarde</span>
+            </div>
+          </article>
+          <article class="moment" data-reveal>
+            <div class="polaroid tilt">
+              <img src="./assets/images/momento_02.jpg" alt="Passeio ao ar livre" />
+              <span class="caption">Passeio ao ar livre</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Linha do Tempo -->
+      <section id="timeline" class="snap-section section-timeline" data-label="Linha">
+        <header class="section-head" data-reveal>
+          <h2>Linha do Tempo</h2>
+          <p>De Novembro/2024 até Outubro/2025 — do começo aos grandes momentos.</p>
+        </header>
+        <div class="timeline-grid">
+          <!-- Example timeline items (you can duplicate & replace with your real content) -->
+          <article class="moment" data-reveal>
+            <div class="polaroid">
+              <img src="./assets/images/nov_2024.jpg" alt="Novembro 2024 — começo" />
+              <span class="caption">Nov 2024 • O começo</span>
+            </div>
+          </article>
+          <article class="moment" data-reveal>
+            <div class="polaroid">
+              <img src="./assets/images/dez_2024.jpg" alt="Dezembro 2024 — risos e planos" />
+              <span class="caption">Dez 2024 • Risos e planos</span>
+            </div>
+          </article>
+          <article class="moment" data-reveal>
+            <div class="polaroid">
+              <img src="./assets/images/jan_2025.jpg" alt="Janeiro 2025 — viagens" />
+              <span class="caption">Jan 2025 • Pequena viagem</span>
+            </div>
+          </article>
+          <!-- Add more items for each month; images can be replaced later -->
+        </div>
+      </section>
+
+      <!-- Galeria Animada -->
+  <section id="gallery" class="snap-section section-gallery" data-label="Galeria">
+        <header class="section-head" data-reveal>
+          <h2>Galeria Animada</h2>
+          <p>Polaroids com profundidade 3D e flutuação sutil.</p>
+        </header>
+        <div class="polaroid-wall">
+          <div class="polaroid tilt" data-reveal>
+            <img src="./assets/images/galeria_01.jpg" alt="Nós dois, rindo" />
+            <span class="caption">Risos espontâneos</span>
+          </div>
+          <div class="polaroid tilt" data-reveal>
+            <img src="./assets/images/galeria_02.jpg" alt="Pôr do sol" />
+            <span class="caption">Pôr do sol</span>
+          </div>
+          <div class="polaroid tilt" data-reveal>
+            <img src="./assets/images/galeria_03.jpg" alt="Detalhe de mãos" />
+            <span class="caption">Mãos dadas</span>
+          </div>
+        </div> 
+      </section>
+
+      <!-- Mensagem Final -->
+  <section id="final" class="snap-section section-final" data-label="Final">
+        <header class="section-head" data-reveal>
+          <h2>Mensagem Final</h2>
+          <p>Obrigado por cada dia — do primeiro ao trezentésimo sexagésimo quinto.</p>
+        </header>
+        <div class="final-message" data-reveal>
+          <p class="handwrite">Você é meu lugar favorito do mundo.</p>
+          <button class="secret-btn" type="button" aria-label="Toque aqui">Toque aqui</button>
+          <div class="heart-final" aria-hidden="true"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Anime.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- App (ESM) -->
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

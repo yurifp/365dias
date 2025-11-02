@@ -1,0 +1,193 @@
+:root{
+  --bg: #0b0d10;
+  --panel: #1a1d22;
+  --ink: #d6d9df;
+  --muted: #8b92a1;
+  --accent: #ff5c70; /* coral/red */
+  --accent-2: #e2b34c; /* gold */
+  --accent-3: #ff637c; /* softer */
+  --shadow: 0 10px 40px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.55;
+  overscroll-behavior-y:none;
+  scroll-snap-type: y proximity;
+  overflow-x: hidden; /* prevent accidental horizontal scroll */
+}
+
+/* Locked-stage mode: keep structure fixed and use virtual scroll */
+body.locked{ overflow:hidden; }
+body.locked .snap-container{ position:fixed; inset:0; height:100dvh; overflow:hidden; }
+body.locked .dot-nav{ display:none }
+/* In locked mode, stack sections as slides */
+body.locked .snap-container{ display:block }
+body.locked .snap-section{ position:absolute; inset:0; opacity:0; pointer-events:none; transition: opacity .32s ease; }
+body.locked .snap-section.is-active{ opacity:1; pointer-events:auto; }
+/* Keep only cover active by default; other sections remain hidden in locked mode */
+body.locked #cover{ opacity:1; pointer-events:auto }
+
+/* Stage take sections are transparent scaffolding for micro-takes */
+.stage-take{ background: transparent; }
+
+/* Subtle premium grain + grid overlay */
+body::before{
+  content:"";
+  position:fixed; inset:0; pointer-events:none;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(255,99,124,.06), transparent 60%),
+    radial-gradient(800px 400px at 90% 80%, rgba(226,179,76,.06), transparent 60%);
+  mix-blend-mode: screen; opacity:.6; z-index:0;
+}
+body::after{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image: linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px; opacity:.2;
+}
+
+/* Background particles canvas */
+#bgParticles{ position:fixed; inset:0; z-index:0; opacity:.25; }
+.webgl-starry{ position:fixed; inset:0; z-index:0; pointer-events:none; display:block; }
+
+/* Progress bar shell fixed bottom */
+.progress-shell{
+  --p: 0%;
+  position:fixed; left:0; right:0; bottom:18px; z-index:10;
+  display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:center;
+  padding:0 24px;
+}
+.progress-track{
+  width:min(960px, calc(100vw - 48px));
+  height:36px; border-radius:18px; padding:10px 16px; 
+  background: linear-gradient(180deg, #1f2228, #14161b); 
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), var(--shadow);
+  position:relative;
+}
+/* Micro + major ticks inspired by animejs */
+.progress-track::before{
+  content:""; position:absolute; inset:8px 12px; border-radius:10px; background:#0f1216; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.progress-track::after{
+  /* micro segments (thin) + major ticks (thicker, 12 marks) */
+  content:""; position:absolute; inset:8px 12px; border-radius:10px;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.14) 0 1px, transparent 1px 7px),
+    linear-gradient(90deg, rgba(255,255,255,.34) 0 2px, transparent 2px 100%);
+  background-size:
+    7px 100%,
+    calc(100%/13) 100%;
+  background-repeat: repeat, repeat;
+  mix-blend-mode: screen;
+}
+/* Accent fill overlay controlled by --p */
+.progress-fill{ position:absolute; inset:8px 12px; border-radius:10px; pointer-events:none; overflow:hidden; }
+.progress-fill::before{
+  content:""; position:absolute; left:0; top:0; bottom:0; right:auto; border-radius:10px 0 0 10px;
+  background:
+    linear-gradient(90deg, rgba(255,99,124,.4), rgba(226,179,76,.4)),
+    repeating-linear-gradient(90deg, rgba(255,99,124,.4) 0 1px, transparent 1px 7px);
+  width:var(--p); max-width:100%; height:100%;
+  box-shadow: 0 0 20px rgba(255,99,124,.25), 0 0 40px rgba(226,179,76,.2);
+}
+.progress-indicator{
+  --x: 0px;
+  position:absolute; top:50%; left:12px; transform: translate(calc(var(--x)), -50%);
+  width:6px; height:20px; border-radius:3px; background: var(--accent);
+  box-shadow: 0 0 10px rgba(255,92,112,.9), 0 0 30px rgba(255,92,112,.4);
+}
+.progress-months{ display:flex; gap:0; list-style:none; padding:0; margin:0; width:min(960px, calc(100vw - 48px)); justify-content:space-between; }
+.progress-months li{ color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; opacity:.7 }
+.progress-months li.active{ color:var(--ink); opacity:1 }
+
+/* Dot navigation */
+.dot-nav{ position:fixed; right:16px; top:50%; transform:translateY(-50%); z-index:11; }
+.dot-nav ul{ list-style:none; margin:0; padding:8px; background:rgba(20,22,27,.5); backdrop-filter: blur(8px); border-radius:999px; box-shadow: var(--shadow); }
+.dot-nav a{ display:block; width:10px; height:10px; border-radius:50%; margin:10px; background:#3a404a; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); transition: all .3s ease; }
+.dot-nav a:hover, .dot-nav a:focus{ background: var(--accent); box-shadow: 0 0 12px rgba(255,92,112,.8) }
+
+/* Snap layout */
+.snap-container{ position:relative; z-index:1; }
+.snap-section{ min-height:100dvh; display:grid; place-items:center; padding:64px 24px 120px; scroll-snap-align:start; }
+.snap-section:focus{ outline:none }
+
+.section-cover{ background:#0d0d0d; }
+.section-cover .cover-inner{ display:none }
+.cover-center{ width:100%; height:100%; display:grid; place-items:center; }
+.heart-svg{ width: clamp(260px, 70vw, 520px); height: auto; overflow: visible; }
+/* Canvas replacement keeps same sizing, with explicit square aspect */
+.heart-canvas{ width: clamp(260px, 70vw, 520px); height: auto; aspect-ratio: 1 / 1; display:block; }
+
+/* Heart mosaic */
+.heart-dot-svg{ fill: #ff5c70; filter: drop-shadow(0 0 6px rgba(255,92,112,.45)); opacity: 0; }
+
+.title-hero{ display:none }
+.subtitle{ display:none }
+.tap-hint{ display:inline-flex; gap:10px; align-items:center; margin-top:24px; color:var(--muted); font-size:12px; opacity:.7; animation: hintPulse 2s ease-in-out infinite; }
+@keyframes hintPulse{ 0%,100%{ opacity:.45; transform: translateY(0)} 50%{ opacity:1; transform:translateY(2px)} }
+
+.section-head{ text-align:center; max-width:760px; margin-inline:auto; }
+.section-head h2{ font-size: clamp(22px, 4.4vw, 36px); margin:0 0 8px; font-weight:700 }
+.section-head p{ margin:0; color:var(--muted) }
+
+/* Fixed HUD for frame content */
+.frame-hud{ position:fixed; left:0; right:0; top:24px; z-index:9; display:grid; place-items:center; pointer-events:none; }
+.frame-inner{ background: rgba(20,22,27,.48); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,.06); box-shadow: var(--shadow); border-radius: 14px; padding: 10px 14px; opacity: 1; transform: translateY(0); }
+.frame-title{ margin:0; font-size: clamp(14px, 2.8vw, 18px); font-weight:700 }
+.frame-desc{ margin:2px 0 0; font-size:12px; color: var(--muted) }
+
+/* Fixed content deck (polaroid) */
+.frame-deck{ position:fixed; left:50%; transform: translateX(-50%); bottom: 128px; z-index:8; width:min(84vw, 520px); }
+.frame-card img{ width:100%; aspect-ratio: 4/5; object-fit:cover; border-radius:10px; display:block; background: linear-gradient(135deg, #20242b, #12151a); }
+
+/* Date chip (MM / YYYY) */
+.date-chip{ position:fixed; top:24px; left:24px; z-index:12; pointer-events:none; }
+.date-inner{ display:flex; align-items:center; gap:10px; background: rgba(20,22,27,.6); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:8px 10px; box-shadow: var(--shadow); font-variant-numeric: tabular-nums; }
+.sep{ color: var(--muted); opacity:.8; }
+.odo{ display:flex; gap:4px; }
+.digit-window{ width: 16px; height: 28px; overflow:hidden; display:grid; place-items:center; }
+.digit-col{ display:flex; flex-direction:column; transform: translateY(0); will-change: transform; }
+.digit{ height:28px; line-height:28px; font-weight:700; font-size:18px; color: var(--ink); text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+
+/* Timeline */
+.section-timeline .timeline-grid{ display:grid; grid-template-columns: 1fr; gap:20px; width:min(980px, 100%); margin:32px auto 0; }
+.moment{ display:flex; justify-content:center }
+
+/* Moments section mirrors timeline grid */
+.section-moments .timeline-grid{ display:grid; grid-template-columns: 1fr; gap:20px; width:min(980px, 100%); margin:32px auto 0; }
+
+/* Polaroid style */
+.polaroid{ background:#0f1216; border-radius:16px; padding:14px 14px 40px; box-shadow: var(--shadow), inset 0 0 0 1px rgba(255,255,255,.06); position:relative; transform-style:preserve-3d; width:min(100%, 520px); margin-inline:auto }
+.polaroid img{ width:100%; aspect-ratio: 4/5; object-fit:cover; border-radius:10px; display:block; background: linear-gradient(135deg, #20242b, #12151a); }
+.polaroid .caption{ position:absolute; left:0; right:0; bottom:10px; text-align:center; color:var(--muted); font-size:12px; letter-spacing:.04em }
+
+/* Floating loop */
+.floaty{ animation: floaty 6s ease-in-out infinite; }
+@keyframes floaty{ 0%{ transform: translateY(0px) rotate(-.4deg) } 50%{ transform: translateY(-6px) rotate(.4deg) } 100%{ transform: translateY(0px) rotate(-.4deg) } }
+
+/* Gallery */
+.section-gallery .polaroid-wall{ display:grid; grid-template-columns: 1fr; gap:24px; width:min(980px, 100%); margin:32px auto 0; }
+
+/* Final */
+.final-message{ display:grid; gap:16px; place-items:center; }
+.handwrite{ font-family: "Playfair Display", serif; font-size: clamp(20px, 5.2vw, 42px); color: var(--ink); text-shadow: 0 2px 20px rgba(255,99,124,.18) }
+.secret-btn{ background: linear-gradient(180deg, #22262d, #171a20); color:var(--ink); border:1px solid rgba(255,255,255,.08); padding:12px 18px; border-radius:12px; cursor:pointer; transition:.3s; }
+.secret-btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,92,112,.14) }
+.heart-final{ width:42px; height:42px; background: var(--accent); clip-path: path("M12 21s-8-4.438-8-11a5 5 0 0110 0 5 5 0 0110 0c0 6.562-8 11-8 11z"); filter: drop-shadow(0 0 20px rgba(255,92,112,.45)); opacity:.7 }
+
+/* Reveal (initial) */
+[data-reveal]{ opacity:0; transform: translateY(16px); }
+
+/* Responsive breakpoints */
+@media (min-width: 430px){
+  .section-gallery .polaroid-wall{ grid-template-columns: repeat(2, 1fr) }
+}
+@media (min-width: 768px){
+  .section-timeline .timeline-grid{ grid-template-columns: repeat(2, 1fr) }
+  .section-gallery .polaroid-wall{ grid-template-columns: repeat(3, 1fr) }
+}
