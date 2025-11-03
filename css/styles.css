@@ -137,23 +137,20 @@ body::after{
 /* Fixed HUD for frame content */
 /* Sticker HUD - movable and always on top */
 .frame-hud{ position: fixed; top: var(--hud-top, 24px); left: var(--hud-left, 24px); z-index: 9999; pointer-events: none; }
-/* Tip: move per take using data attrs set by JS, e.g.
-  .frame-hud[data-take="02"]{ --hud-top: 40px; --hud-left: 80px }
-  .frame-hud[data-take="10"]{ --hud-top: 20px; --hud-left: calc(50% - 60px) }
-*/
+
+  .frame-hud[data-take="01"]{ 
+    --hud-top: 40px; --hud-left: 80px; 
+    width: 80%;
+  }
+
+  .frame-hud[data-take="02"]{ 
+    --hud-top: 20px; --hud-left: calc(50% - 60px); 
+  }
+
 /* Sticker-only HUD: no panel */
 .frame-inner{ background: transparent; backdrop-filter: none; border:none; box-shadow:none; border-radius:0; padding:0; opacity:1; transform:none; }
 .frame-sticker{ display:block; position: relative; width: clamp(40px, 12vw, 84px); height:auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); transform-origin: center; pointer-events: none; }
 
-.sticker-take-01{ 
-  width: 80%; transform: translateY(2px) rotate(-6deg); 
-}
-
-.sticker-take-02{ 
-  width: 80%;
-  position: relative;
-  top: 375px; 
-}
 
 
 
