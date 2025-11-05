@@ -11,16 +11,16 @@
     },
     "cover": { "title": "Capa da Jan 2/4", "image": "./assets/images/161124.jpg" }
 },
-  { "title": "Cinema", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
+  { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
   { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
   
 
-  { "title": "Dez 2024 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/071224.jpg", "date": "07/12/2024" },
-  { "title": "Dez 2024 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/141224.jpg", "date": "14/12/2024" },
-  { "title": "Dez 2024 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/231224.jpg", "date": "23/12/2024" },
-  { "title": "Dez 2024 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/281224.jpg", "date": "28/12/2024" },
+  { "title": "Poke, cinema e gelato", "caption": "Esse wikipoke nos vendeu a ideia de que eles eram muito bons kkkk", "image": "./assets/images/071224.jpg", "date": "07/12/2024" },
+  { "title": "Dia de compras", "caption": "Um limãozinho para outro Limãozinho🍋", "image": "./assets/images/141224.jpg", "date": "14/12/2024" },
+  { "title": "Natal com sabor de limão", "caption": "você me deu um Limoncello e outros milhares de motivos pra sorrir", "image": "./assets/images/231224.jpg", "date": "23/12/2024" },
+  { "title": "MAMMA JAMMA", "caption": "Será que a gente gosta da culinária italiana?", "image": "./assets/images/281224.jpg", "date": "28/12/2024" },
 
-  { "title": "Jan 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/040125.jpg", "date": "04/01/2025" },
+  { "title": "Yakisoba e Gelato", "caption": "Nosso yakisoba favorito, nosso gelato favorito e minha pessoa favorita..", "image": "./assets/images/040125.jpg", "date": "04/01/2025" },
   
   { "title": "Jan 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/120125.jpg", "date": "12/01/2025",
     "widgets": {
