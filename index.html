@@ -13,31 +13,37 @@
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
   <body>
-    <!-- Background layer (WebGL starry night injected by JS) -->
+    <!-- Background layer (optional) -->
     <canvas id="bgParticles" aria-hidden="true"></canvas>
 
-    <!-- Fixed futuristic progress bar (animejs style) -->
-    <div class="progress-shell" role="progressbar" aria-label="Progresso da história" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <div class="progress-track">
-        <div class="progress-fill"></div>
-        <div class="progress-indicator" aria-hidden="true"></div>
+    <!-- Polaroid Carousel Section -->
+  <section class="carousel-section is-light" style="padding: 64px 24px 24px;">
+      <div id="polaroidCarousel"></div>
+      <div class="carousel-content" style="max-width: 740px; margin: 24px auto 0; text-align: left;">
+        <h2 id="carouselTitle" style="margin:0 0 8px;"></h2>
+        <p id="carouselDesc" style="margin:0 0 4px; color: var(--muted)"></p>
+        <p id="carouselDate" style="margin:0; opacity:.8"></p>
       </div>
-      <ol class="progress-months" id="progressMonths" aria-hidden="true"></ol>
-    </div>
+      <!-- Modular cards bound to current photo -->
+      <section class="cards-section">
+        <div id="cardsGrid" class="cards-grid" aria-live="polite"></div>
+      </section>
+    </section>
 
+    <!-- iOS/Notion/Linktree-style Interactive Cards (dynamic per photo) -->
+    <section id="widgets" class="widgets-section" aria-live="polite"></section>
 
-
-    <!-- Main container with vertical snap -->
-    <main class="snap-container">
+    <!-- Restante da página rolável normalmente -->
+    <main>
       <!-- Intro / Cover -->
-      <section id="cover" class="snap-section section-cover" data-label="Capa">
+  <section id="cover" class="snap-section section-cover is-light" data-label="Capa">
         <div class="cover-center">
           <svg id="heartSvg" class="heart-svg" viewBox="0 0 100 100" role="img" aria-label="Coração animado"></svg>
         </div>
       </section>
 
       <!-- Momentos Felizes (nova seção para totalizar 5) -->
-      <section id="moments" class="snap-section section-moments" data-label="Momentos">
+  <section id="moments" class="snap-section section-moments is-light" data-label="Momentos">
         <header class="section-head" data-reveal>
           <h2>Momentos Felizes</h2>
           <p>Pequenas cenas que guardamos no coração.</p>
@@ -59,7 +65,7 @@
       </section>
 
       <!-- Linha do Tempo -->
-      <section id="timeline" class="snap-section section-timeline" data-label="Linha">
+  <section id="timeline" class="snap-section section-timeline is-light" data-label="Linha">
         <header class="section-head" data-reveal>
           <h2>Linha do Tempo</h2>
           <p>De Novembro/2024 até Outubro/2025 — do começo aos grandes momentos.</p>
@@ -89,7 +95,7 @@
       </section>
 
       <!-- Galeria Animada -->
-  <section id="gallery" class="snap-section section-gallery" data-label="Galeria">
+  <section id="gallery" class="snap-section section-gallery is-light" data-label="Galeria">
         <header class="section-head" data-reveal>
           <h2>Galeria Animada</h2>
           <p>Polaroids com profundidade 3D e flutuação sutil.</p>
@@ -111,14 +117,14 @@
       </section>
 
       <!-- Mensagem Final -->
-  <section id="final" class="snap-section section-final" data-label="Final">
+  <section id="final" class="snap-section section-final is-light" data-label="Final">
         <header class="section-head" data-reveal>
           <h2>Mensagem Final</h2>
           <p>Obrigado por cada dia — do primeiro ao trezentésimo sexagésimo quinto.</p>
         </header>
         <div class="final-message" data-reveal>
           <p class="handwrite">Você é meu lugar favorito do mundo.</p>
-          <button class="secret-btn" type="button" aria-label="Toque aqui">Toque aqui</button>
+      
           <div class="heart-final" aria-hidden="true"></div>
         </div>
       </section>
@@ -127,7 +133,7 @@
     <!-- Anime.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- App (ESM) -->
-    <script type="module" src="./js/app.js"></script>
+    <!-- App (ESM) - versão carrossel -->
+    <script type="module" src="./js/app_carousel.js"></script>
   </body>
 </html>

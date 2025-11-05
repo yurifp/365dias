@@ -166,7 +166,8 @@ export function initDateChip(driver){
   }
 
   driver.on((p)=>{
-    const n = 52;
+    // Map progress to the current dates length (not a fixed 52)
+    const n = Math.max(1, DATE_CHIP_STATE.dates.length);
     const idx = Math.min(n-1, Math.floor(p * n));
     applyForTake(idx);
   });
@@ -178,8 +179,9 @@ export function initDateChip(driver){
 // Set full date mapping for 52 takes. Each entry: 'dd/mm/yyyy' or {d,m,y} or null
 export function setDateMap(dates){
   if (!Array.isArray(dates)) return;
-  const arr = new Array(52).fill(null);
-  for (let i=0;i<52;i++){
+  const len = Math.max(1, dates.length|0);
+  const arr = new Array(len).fill(null);
+  for (let i=0;i<len;i++){
     const v = dates[i];
     if (v == null) { arr[i] = null; continue; }
     if (typeof v === 'string') arr[i] = v;
@@ -192,7 +194,7 @@ export function setDateMap(dates){
 
 // Set one take date by index
 export function setDateForTake(idx, date){
-  if (idx<0 || idx>=52) return;
+  if (idx<0 || idx>=DATE_CHIP_STATE.dates.length) return;
   if (typeof date === 'string') DATE_CHIP_STATE.dates[idx] = date;
   else if (date && typeof date === 'object') DATE_CHIP_STATE.dates[idx] = { d: date.d|0, m: date.m|0, y: date.y|0 };
 }

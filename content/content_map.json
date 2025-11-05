@@ -1,66 +1,100 @@
 [
-  { "title": "Nov 2024 — Parte 1/4", "caption": "parte 1/4", "image": "./assets/images/091124.png", "date": "09.11.2024" },
+  { "title": "O pedido", "caption": "Outback", "image": "./assets/images/091124.png", "date": "09.11.2024" 
+    ,"widgets": {
+      "title": "Coleção",
+      "subtitle": "Widgets da foto — personalizados",
+      "items": [
+        { "type": "map", "title": "Salvador, BR", "subtitle": "Localização" },
+        { "type": "video", "title": "Clipe curto", "subtitle": "Vídeo" },
+        { "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders" },
+        { "type": "link", "title": "yurifp.dev", "url": "https://yurifp.dev" },
+        { "type": "text", "text": "Add a title..." }
+      ]
+    },
+    "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" }
+},
   { "title": "Nov 2024 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
   { "title": "Nov 2024 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
-  { "title": "Nov 2024 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/nov_2024_4.jpg", "date": "2/11/2024" },
+  
 
-  { "title": "Dez 2024 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/dez_2024_1.jpg", "date": "12/2024" },
-  { "title": "Dez 2024 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/dez_2024_2.jpg", "date": "08/12/2024" },
-  { "title": "Dez 2024 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/dez_2024_3.jpg", "date": "15/12/2024" },
-  { "title": "Dez 2024 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/dez_2024_4.jpg", "date": "28/12/2024" },
+  { "title": "Dez 2024 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/071224.jpg", "date": "07/12/2024" },
+  { "title": "Dez 2024 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/141224.jpg", "date": "14/12/2024" },
+  { "title": "Dez 2024 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/231224.jpg", "date": "23/12/2024" },
+  { "title": "Dez 2024 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/281224.jpg", "date": "28/12/2024" },
 
-  { "title": "Jan 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/jan_2025_1.jpg", "date": "01/2025" },
-  { "title": "Jan 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/jan_2025_2.jpg", "date": "04/01/2025" },
-  { "title": "Jan 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/jan_2025_3.jpg", "date": null },
-  { "title": "Jan 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/jan_2025_4.jpg", "date": null },
+  { "title": "Jan 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/040125.jpg", "date": "04/01/2025" },
+  
+  { "title": "Jan 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/120125.jpg", "date": "12/01/2025",
+    "widgets": {
+      "title": "Coleção",
+      "subtitle": "Widgets da foto — personalizados",
+      "items": [
+        { "type": "map", "title": "Salvador, BR", "subtitle": "Localização" },
+        { "type": "video", "title": "Clipe curto", "subtitle": "Vídeo" },
+        { "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders" },
+        { "type": "link", "title": "yurifp.dev", "url": "https://yurifp.dev" },
+        { "type": "text", "text": "Add a title..." }
+      ]
+    },
+    "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" }
+  },
+  { "title": "Jan 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/250125.jpg", "date": "25/01/2025" },
+ 
 
-  { "title": "Fev 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/fev_2025_1.jpg", "date": "02/2025" },
-  { "title": "Fev 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/fev_2025_2.jpg", "date": null },
-  { "title": "Fev 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/fev_2025_3.jpg", "date": null },
-  { "title": "Fev 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/fev_2025_4.jpg", "date": null },
+  { "title": "Fev 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/140225.JPEG", "date": "14/02/2025" },
+  { "title": "Fev 2025 — Parte 3/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/180225.JPEG", "date": "18/02/2025" },
+  { "title": "Fev 2025 — Parte 4/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/280225.JPEG", "date": "28/02/2025" }, 
 
-  { "title": "Mar 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/mar_2025_1.jpg", "date": "03/2025" },
-  { "title": "Mar 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/mar_2025_2.jpg", "date": null },
-  { "title": "Mar 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/mar_2025_3.jpg", "date": null },
-  { "title": "Mar 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/mar_2025_4.jpg", "date": null },
+  { "title": "Mar 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/g280325-3.png", "date": "15/03/2025",
+    "widgets": {
+      "title": "Coleção",
+      "subtitle": "Blocos desta foto",
+      "items": [
+        { "type": "map", "title": "Shopping", "subtitle": "Local" },
+        { "type": "music", "title": "Nossa música", "track": "Yellow", "artist": "Coldplay" },
+        { "type": "link", "title": "Instagram", "url": "https://instagram.com" }
+      ]
+    },
+    "cover": { "title": "Capa de Março", "subtitle": "Juntos no sábado" }
+  },
+  { "title": "Mar 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/150325.JPEG", "date": "15/03/2025" },
+  { "title": "Mar 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/160325.JPEG", "date": "16/03/2025" },
 
-  { "title": "Abr 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/abr_2025_1.jpg", "date": "04/2025" },
-  { "title": "Abr 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/abr_2025_2.jpg", "date": null },
-  { "title": "Abr 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/abr_2025_3.jpg", "date": null },
-  { "title": "Abr 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/abr_2025_4.jpg", "date": null },
+  { "title": "Abr 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/130425.JPEG", "date": "13/04/2025" },
+  { "title": "Abr 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/140425.JPEG", "date": "14/04/2025" },
 
-  { "title": "Mai 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/mai_2025_1.jpg", "date": "05/2025" },
-  { "title": "Mai 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/mai_2025_2.jpg", "date": null },
-  { "title": "Mai 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/mai_2025_3.jpg", "date": null },
-  { "title": "Mai 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/mai_2025_4.jpg", "date": null },
 
-  { "title": "Jun 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/jun_2025_1.jpg", "date": "06/2025" },
-  { "title": "Jun 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/jun_2025_2.jpg", "date": null },
-  { "title": "Jun 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/jun_2025_3.jpg", "date": null },
-  { "title": "Jun 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/jun_2025_4.jpg", "date": null },
+  { "title": "Mai 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/050525-2.JPEG", "date": "05/05/2025" },
+  { "title": "Mai 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/170525.JPEG", "date": "17/05/2025" },
+  { "title": "Mai 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/240525.JPEG", "date": "24/05/2025" },
+  { "title": "Mai 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/310525-1.JPEG", "date": "31/05/2025" },
 
-  { "title": "Jul 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/jul_2025_1.jpg", "date": "07/2025" },
-  { "title": "Jul 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/jul_2025_2.jpg", "date": null },
-  { "title": "Jul 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/jul_2025_3.jpg", "date": null },
-  { "title": "Jul 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/jul_2025_4.jpg", "date": null },
+  { "title": "Jun 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/120625-1.png", "date": "12/06/2025" },
+  { "title": "Jun 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/130625.JPEG", "date": "13/06/2025" },
+  { "title": "Jun 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/230625.JPEG", "date": "23/06/2025" },
+  { "title": "Jun 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/240625.JPEG", "date": "24/06/2025" },
 
-  { "title": "Ago 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/ago_2025_1.jpg", "date": "08/2025" },
-  { "title": "Ago 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/ago_2025_2.jpg", "date": null },
-  { "title": "Ago 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/ago_2025_3.jpg", "date": null },
-  { "title": "Ago 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/ago_2025_4.jpg", "date": null },
+  { "title": "Jul 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/050725.JPEG", "date": "05/07/2025" },
+  { "title": "Jul 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/060725.JPEG", "date": "06/07/2025" },
+  { "title": "Jul 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/240725-2.JPEG", "date": "24/07/2025" },
+  { "title": "Jul 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/250725.JPEG", "date": "25/07/2025" },
 
-  { "title": "Set 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/set_2025_1.jpg", "date": "09/2025" },
-  { "title": "Set 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/set_2025_2.jpg", "date": null },
-  { "title": "Set 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/set_2025_3.jpg", "date": null },
-  { "title": "Set 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/set_2025_4.jpg", "date": null },
+  { "title": "Ago 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/090825.JPEG", "date": "09/08/2025" },
+  { "title": "Ago 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/100825.JPEG", "date": "10/08/2025" },
+  { "title": "Ago 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/300825.JPEG", "date": "30/08/2025" },
 
-  { "title": "Out 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/out_2025_1.jpg", "date": "10/2025" },
-  { "title": "Out 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/out_2025_2.jpg", "date": null },
-  { "title": "Out 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/out_2025_3.jpg", "date": null },
-  { "title": "Out 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/out_2025_4.jpg", "date": null },
 
-  { "title": "Nov 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/nov_2025_1.jpg", "date": "11/2025" },
-  { "title": "Nov 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/nov_2025_2.jpg", "date": null },
-  { "title": "Nov 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/nov_2025_3.jpg", "date": null },
-  { "title": "Nov 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/nov_2025_4.jpg", "date": null }
+  { "title": "Set 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/130925.JPEG", "date": "13/09/2025" },
+  { "title": "Set 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/140925.JPEG", "date": "14/09/2025" },
+  { "title": "Set 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/220925.JPEG", "date": "22/09/2025" },
+  
+
+  { "title": "Out 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/101025.JPEG", "date": "10/10/2025" },
+  { "title": "Out 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/251025.JPEG", "date": "25/10/2025" },
+
+
+  { "title": "Nov 2025 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/nov_2025_1.JPEG", "date": "08/11/2025" },
+  { "title": "Nov 2025 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/nov_2025_2.JPEG", "date": "09/11/2025" },
+  { "title": "Nov 2025 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/nov_2025_3.JPEG", "date": "15/11/2025" },
+  { "title": "Nov 2025 — Parte 4/4", "caption": "Legenda da parte 4/4", "image": "./assets/images/nov_2025_4.JPEG", "date": "25/11/2025" }
 ]
