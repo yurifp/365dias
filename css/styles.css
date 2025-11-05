@@ -17,7 +17,7 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth; overflow-x:hidden}
 body{
   margin:0;
   background: #f6f8fb;
@@ -29,6 +29,14 @@ body{
     scroll-snap-type: none;
   overflow-x: hidden; /* prevent accidental horizontal scroll */
 }
+
+/* Hard-stop any horizontal scroll from nested containers or media */
+.snap-container,
+.snap-section,
+.carousel-section,
+.widgets-section{ overflow-x:hidden; }
+
+img, svg, iframe, canvas, video{ max-width:100%; height:auto; }
 
 /* Locked-stage mode: keep structure fixed and use virtual scroll */
 body.locked{ overflow:hidden; }
