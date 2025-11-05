@@ -115,9 +115,9 @@ async function init(){
       } else {
         renderCards('#cardsGrid', []);
       }
-      // render widgets + cover for this slide
-      renderWidgets('#widgets', slide?.widgets || {});
-      renderCover(slide?.cover || {});
+  // render widgets + cover for this slide (pass slideId for CSS targeting)
+  renderWidgets('#widgets', slide?.widgets || {}, { slideId: slide?.id || idx });
+  renderCover(slide?.cover || {});
     }
   });
   // Initialize date chip after card exists; it auto-mounts inside .frame-card
@@ -130,7 +130,7 @@ async function init(){
     renderCards('#cardsGrid', slides[0].cards);
   }
   // Initial widgets + cover
-  renderWidgets('#widgets', slides[0]?.widgets || {});
+  renderWidgets('#widgets', slides[0]?.widgets || {}, { slideId: slides[0]?.id || 0 });
   renderCover(slides[0]?.cover || {});
 }
 

@@ -8,11 +8,12 @@
 
 function E(tag, cls){ const n = document.createElement(tag); if (cls) n.className = cls; return n; }
 
-export function renderWidgets(mount, config){
+export function renderWidgets(mount, config, ctx){
   const host = typeof mount === 'string' ? document.querySelector(mount) : mount;
   if (!host) return;
   const data = config || {};
   host.innerHTML = '';
+  if (ctx && ctx.slideId) host.dataset.slideId = String(ctx.slideId);
 
   const head = E('div','widgets-head');
   const h2 = E('h2'); h2.id = 'widgetsTitle'; h2.textContent = data.title || 'Coleção';
@@ -28,7 +29,25 @@ export function renderWidgets(mount, config){
   items.forEach((it, i)=>{
     const card = E('article','widget-card');
     card.dataset.type = it.type || 'text';
-    if (it.id) card.dataset.id = it.id;
+    card.dataset.id = it.id ? String(it.id) : `w${i+1}`;
+    if (it.class) card.classList.add(String(it.class));
+    if (it.span){
+      card.dataset.span = String(it.span); // e.g., "2x1", "1x2", "2x2"
+    }
+    // size controls
+    if (Number.isFinite(it.colSpan)) card.style.gridColumn = `span ${it.colSpan|0}`;
+    if (Number.isFinite(it.rowSpan)) card.style.gridRow = `span ${it.rowSpan|0}`;
+    if (it.minHeight) card.style.minHeight = String(it.minHeight);
+    // css var overrides
+    if (it.vars && typeof it.vars === 'object'){
+      Object.entries(it.vars).forEach(([k,v])=>{
+        try{ card.style.setProperty(k, String(v)); }catch{ /* ignore */ }
+      });
+    }
+    // inline style (last-priority)
+    if (it.style && typeof it.style === 'object'){
+      Object.assign(card.style, it.style);
+    }
 
     // header
     const head = E('div','widget-head');

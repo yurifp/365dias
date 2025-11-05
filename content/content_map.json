@@ -4,14 +4,12 @@
       "title": "Coleção",
       "subtitle": "Widgets da foto — personalizados",
       "items": [
-        { "type": "map", "title": "Salvador, BR", "subtitle": "Localização" },
-        { "type": "video", "title": "Clipe curto", "subtitle": "Vídeo" },
-        { "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders" },
-        { "type": "link", "title": "yurifp.dev", "url": "https://yurifp.dev" },
-        { "type": "text", "text": "Add a title..." }
+        { "id": "map1", "type": "map", "title": "Salvador, BR", "subtitle": "Localização", "span": "2x2", "minHeight": "160px" },
+        { "id": "vid1", "type": "video", "title": "Clipe curto", "subtitle": "Vídeo", "span": "2x2", "vars": { "--w-min-h": "200px" } },
+        { "id": "music1", "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders", "span": "2x1", "minHeight": "120px" }
       ]
     },
-    "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" }
+    "cover": { "title": "Capa da Jan 2/4", "image": "./assets/images/161124.jpg" }
 },
   { "title": "Nov 2024 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
   { "title": "Nov 2024 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
@@ -29,11 +27,11 @@
       "title": "Coleção",
       "subtitle": "Widgets da foto — personalizados",
       "items": [
-        { "type": "map", "title": "Salvador, BR", "subtitle": "Localização" },
-        { "type": "video", "title": "Clipe curto", "subtitle": "Vídeo" },
-        { "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders" },
-        { "type": "link", "title": "yurifp.dev", "url": "https://yurifp.dev" },
-        { "type": "text", "text": "Add a title..." }
+        { "id": "map2", "type": "map", "title": "Salvador, BR", "subtitle": "Localização", "colSpan": 2, "rowSpan": 2, "vars": { "--w-min-h": "220px" } },
+        { "id": "vid2", "type": "video", "title": "Clipe curto", "subtitle": "Vídeo", "span": "2x1" },
+        { "id": "music2", "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders", "span": "1x2" },
+        { "id": "link2", "type": "link", "title": "yurifp.dev", "url": "https://yurifp.dev" },
+        { "id": "txt2", "type": "text", "text": "Add a title...", "span": "2x1" }
       ]
     },
     "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" }
@@ -50,9 +48,9 @@
       "title": "Coleção",
       "subtitle": "Blocos desta foto",
       "items": [
-        { "type": "map", "title": "Shopping", "subtitle": "Local" },
-        { "type": "music", "title": "Nossa música", "track": "Yellow", "artist": "Coldplay" },
-        { "type": "link", "title": "Instagram", "url": "https://instagram.com" }
+        { "id": "map3", "type": "map", "title": "Shopping", "subtitle": "Local", "span": "2x1" },
+        { "id": "music3", "type": "music", "title": "Nossa música", "track": "Yellow", "artist": "Coldplay", "minHeight": "140px" },
+        { "id": "link3", "type": "link", "title": "Instagram", "url": "https://instagram.com", "span": "2x1" }
       ]
     },
     "cover": { "title": "Capa de Março", "subtitle": "Juntos no sábado" }

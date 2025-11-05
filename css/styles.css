@@ -336,6 +336,7 @@ body::after{
   border-radius: 24px;
   box-shadow: 0 6px 24px rgba(0,0,0,.06);
   padding: 16px 20px;
+  min-height: var(--w-min-h, 0);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .widget-card:hover{ 
@@ -377,3 +378,10 @@ body::after{
 /* Free text */
 .w-text{ min-height:78px; display:flex; align-items:center; color: var(--ios-muted); }
 .w-text:focus{ outline: 2px solid var(--ios-primary); outline-offset: 4px; border-radius: 12px; background:#fff; }
+
+/* Common span presets via data attribute */
+#widgets .widget-card[data-span="2x1"]{ grid-column: span 2; }
+#widgets .widget-card[data-span="1x2"]{ grid-row: span 2; }
+#widgets .widget-card[data-span="2x2"]{ grid-column: span 2; grid-row: span 2; }
+#widgets .widget-card[data-span="3x1"]{ grid-column: span 3; }
+#widgets .widget-card[data-span="1x3"]{ grid-row: span 3; }
