@@ -1,5 +1,5 @@
 [
-  { "title": "O pedido", "caption": "Outback", "image": "./assets/images/091124.png", "date": "09.11.2024" 
+  { "title": "O pedido", "caption": "Flores, chocolate e um Outback cheio de gente — o dia em que tudo começou de verdade.", "image": "./assets/images/091124.png", "date": "09.11.2024" 
     ,"widgets": {
       "title": "Coleção",
       "subtitle": "Widgets da foto — personalizados",
@@ -11,8 +11,8 @@
     },
     "cover": { "title": "Capa da Jan 2/4", "image": "./assets/images/161124.jpg" }
 },
-  { "title": "Nov 2024 — Parte 2/4", "caption": "Legenda da parte 2/4", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
-  { "title": "Nov 2024 — Parte 3/4", "caption": "Legenda da parte 3/4", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
+  { "title": "Cinema", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
+  { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
   
 
   { "title": "Dez 2024 — Parte 1/4", "caption": "Legenda da parte 1/4", "image": "./assets/images/071224.jpg", "date": "07/12/2024" },
