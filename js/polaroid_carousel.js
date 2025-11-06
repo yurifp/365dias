@@ -33,8 +33,8 @@ export async function initPolaroidCarousel({ mount, slides = [], onChange } = {}
     const img = document.createElementNS(ns, 'image');
     img.setAttribute('x','11');
     img.setAttribute('y','12');
-    img.setAttribute('width','207');
-    img.setAttribute('height','223');
+    img.setAttribute('width','209');
+    img.setAttribute('height','233');
     img.setAttribute('preserveAspectRatio','xMidYMid slice');
     img.setAttributeNS(XLINK, 'href','');
     if (svg.firstChild) svg.insertBefore(img, svg.firstChild); else svg.appendChild(img);
