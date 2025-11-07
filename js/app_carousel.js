@@ -2,8 +2,6 @@
 import { initPolaroidCarousel } from './polaroid_carousel.js';
 import { initDateChip, setDateMap, setDefaultDay } from './date_chip.js';
 import { renderCards } from './cards.js';
-import { renderWidgets } from './widgets.js';
-import { renderCover } from './cover_dynamic.js';
 
 async function loadContent(){
   try{
@@ -17,8 +15,8 @@ async function loadContent(){
       date: v.date || '',
       image: v.image || '',
       cards: Array.isArray(v.cards) ? v.cards : [],
-      widgets: v.widgets || null,
-      cover: v.cover || null,
+  widgets: v.widgets || null,
+  cover: v.cover || null,
       stickers: Array.isArray(v.stickers) ? v.stickers : null,
     }));
   }catch(err){
@@ -116,9 +114,7 @@ async function init(){
       } else {
         renderCards('#cardsGrid', []);
       }
-  // render widgets + cover for this slide (pass slideId for CSS targeting)
-  renderWidgets('#widgets', slide?.widgets || {}, { slideId: slide?.id || idx });
-  renderCover(slide?.cover || {});
+  // widgets/cover removidos
   updateStickers(slide);
     }
   });
@@ -132,9 +128,7 @@ async function init(){
   if (slides[0] && Array.isArray(slides[0].cards)){
     renderCards('#cardsGrid', slides[0].cards);
   }
-  // Initial widgets + cover
-  renderWidgets('#widgets', slides[0]?.widgets || {}, { slideId: slides[0]?.id || 0 });
-  renderCover(slides[0]?.cover || {});
+  // widgets/cover removidos
   updateStickers(slides[0]);
 
   // Seed any static sticker slots declared in HTML (optional)
