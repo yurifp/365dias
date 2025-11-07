@@ -252,7 +252,7 @@ body::after{
 }
 
 /* === Polaroid Carousel === */
-.carousel-section{ width:min(1100px, 100%); margin:0 auto; height: 1106px; padding: 80px 32px 40px; }
+.carousel-section{ width:min(1100px, 100%); margin:0 auto; height: 2106px; padding: 80px 20px 40px; }
 /* Carousel width responsive to viewport (original sizing) */
 .polaroid-carousel{ display:flex; align-items:center; justify-content:center; gap:12px; width:min(820px, 92vw); margin:0 auto; }
 /* Stage spans full line so the card can be centered perfectly */
@@ -339,7 +339,7 @@ body::after{
 .carousel-section.is-light .card{
   background:#ffffff;
   border:1px solid rgba(0,0,0,.08);
-  height: 1106px;
+  height: 106px;
 }
 .carousel-section.is-light .card-head{ border-bottom:1px solid rgba(0,0,0,.06); }
 .carousel-section.is-light .card-head .icon{ background:#eef2f7; }
