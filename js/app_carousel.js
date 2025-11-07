@@ -19,6 +19,7 @@ async function loadContent(){
       cards: Array.isArray(v.cards) ? v.cards : [],
       widgets: v.widgets || null,
       cover: v.cover || null,
+      stickers: Array.isArray(v.stickers) ? v.stickers : null,
     }));
   }catch(err){
     console.warn('Falha ao carregar content_map.json. Usando demo.', err);
@@ -118,8 +119,10 @@ async function init(){
   // render widgets + cover for this slide (pass slideId for CSS targeting)
   renderWidgets('#widgets', slide?.widgets || {}, { slideId: slide?.id || idx });
   renderCover(slide?.cover || {});
+  updateStickers(slide);
     }
   });
+  // Stickers are not constrained to a single container; they mount anywhere
   // Initialize date chip after card exists; it auto-mounts inside .frame-card
   initDateChip(chipDriver);
   // Seed first content state
@@ -132,6 +135,60 @@ async function init(){
   // Initial widgets + cover
   renderWidgets('#widgets', slides[0]?.widgets || {}, { slideId: slides[0]?.id || 0 });
   renderCover(slides[0]?.cover || {});
+  updateStickers(slides[0]);
+
+  // Seed any static sticker slots declared in HTML (optional)
+  seedStaticStickerSlots();
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Stickers renderer — ensures per-slide overlay with inline CSS
+function updateStickers(slide){
+  // Remove previously rendered slide-owned stickers
+  document.querySelectorAll('img.slide-sticker[data-owner="carousel"]').forEach(n=> n.remove());
+  const items = slide && Array.isArray(slide.stickers) ? slide.stickers : [];
+  if (!items.length) return;
+  items.forEach((s,i)=>{
+    if (!s || !s.img_src) return;
+    const defaultMount = document.querySelector('#polaroidCarousel') || document.body;
+    const mount = (s.mount && typeof s.mount === 'string') ? document.querySelector(s.mount) : defaultMount;
+    if (!mount) return;
+    const img = document.createElement('img');
+    img.src = s.img_src;
+    img.alt = s.alt || '';
+    img.className = 'slide-sticker';
+    img.dataset.owner = 'carousel';
+    img.dataset.index = String(i);
+    // Default to absolute positioning if not provided
+    if (!(s.css && 'position' in s.css)) img.style.position = 'absolute';
+    // Apply inline css
+    if (s.css && typeof s.css === 'object'){
+      Object.entries(s.css).forEach(([k,v])=>{ try{ img.style[k] = String(v); }catch{} });
+    }
+    if (!img.style.zIndex) img.style.zIndex = '100000';
+    mount.appendChild(img);
+  });
+}
+
+// Optional helper: if a sticker-slot has data-src, build an <img> inside it
+function seedStaticStickerSlots(){
+  const slots = document.querySelectorAll('.sticker-slot[data-src]');
+  slots.forEach(slot =>{
+    if (!slot.querySelector('img')){
+      const img = document.createElement('img');
+      img.className = 'slide-sticker';
+      img.src = slot.getAttribute('data-src');
+      const alt = slot.getAttribute('data-alt'); if (alt) img.alt = alt;
+      // Inline CSS via data-css (JSON string) if provided
+      const css = slot.getAttribute('data-css');
+      if (css){
+        try{
+          const obj = JSON.parse(css);
+          Object.entries(obj).forEach(([k,v])=>{ try{ img.style[k] = String(v); }catch{} });
+        }catch{}
+      }
+      slot.appendChild(img);
+    }
+  });
+}

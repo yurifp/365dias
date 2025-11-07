@@ -17,7 +17,7 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-html{scroll-behavior:smooth; overflow-x:hidden}
+html{scroll-behavior:smooth; overflow-x:hidden; overscroll-behavior: none; touch-action: pan-y;}
 body{
   margin:0;
   background: #f6f8fb;
@@ -25,16 +25,27 @@ body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   line-height:1.55;
     /* normal scroll */
-    overscroll-behavior-y:auto;
+    overscroll-behavior: none; /* lock scroll chaining; no nested scroll */
     scroll-snap-type: none;
-  overflow-x: hidden; /* prevent accidental horizontal scroll */
+  overflow-x: hidden !important; /* prevent accidental horizontal scroll */
+  touch-action: pan-y; /* allow only vertical panning */
 }
 
 /* Hard-stop any horizontal scroll from nested containers or media */
 .snap-container,
 .snap-section,
 .carousel-section,
-.widgets-section{ overflow-x:hidden; }
+.widgets-section,
+.cards-section,
+.polaroid-carousel,
+.polaroid-carousel .polaroid-stage{ overflow-x:hidden !important; }
+/* Allow the carousel area to freely overflow so stickers are never cut */
+.carousel-section.is-light,
+.carousel-section.is-light #polaroidCarousel,
+.carousel-section.is-light .polaroid-carousel,
+.carousel-section.is-light .polaroid-carousel .polaroid-stage{
+  overflow: visible !important; /* restore overflow for this section */
+}
 
 img, svg, iframe, canvas, video{ max-width:100%; height:auto; }
 
@@ -241,14 +252,42 @@ body::after{
 }
 
 /* === Polaroid Carousel === */
-.carousel-section{ width:min(980px, 100%); margin:0 auto; }
+.carousel-section{ width:min(980px, 100%); margin:0 auto; height: 1106px; }
+/* Carousel width responsive to viewport (original sizing) */
 .polaroid-carousel{ display:flex; align-items:center; justify-content:center; gap:12px; width:min(820px, 92vw); margin:0 auto; }
-.polaroid-carousel .polaroid-stage{ flex:1 0 auto; display:grid; place-items:center; }
+/* Stage spans full line so the card can be centered perfectly */
+.polaroid-carousel .polaroid-stage{ flex:1 0 auto; display:grid; place-items:center; width:100%; }
+/* Photo size — restore exactly the original feel */
 .polaroid-carousel .frame-card svg{ width:min(84vw, 520px); height:auto; display:block; }
 .polaroid-carousel .nav{ background: linear-gradient(180deg, #22262d, #171a20); color: var(--ink); border:1px solid rgba(255,255,255,.12); width:42px; height:42px; border-radius:50%; display:grid; place-items:center; cursor:pointer; transition:.25s; box-shadow: var(--shadow); }
 .polaroid-carousel .nav:hover{ transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.35) }
 .carousel-content h2{ font-size: clamp(18px, 3.6vw, 28px); }
 .carousel-content p{ font-size: 14px; }
+
+/* With navs removed, use grid on the mount to guarantee perfect centering */
+#polaroidCarousel{ position: relative; display:grid; place-items:center; }
+
+/* Stickers can live anywhere; no single container required */
+
+/* Base sticker element */
+.slide-sticker{
+  position: absolute;
+  pointer-events: auto; /* allow interaction if desired */
+  z-index: 100000; /* ensure above all */
+}
+
+/* Free-position sticker slots that shrink-wrap to their image */
+.sticker-slot{
+  position: absolute; /* position anywhere on the page */
+  display: inline-block; /* shrink to content size */
+  pointer-events: none; /* container lets clicks pass */
+  z-index: 100000; /* above everything */
+}
+.sticker-slot img{
+  display: block;
+  width: auto; height: auto; max-width: none; /* image defines size */
+  pointer-events: auto; /* image can be interacted with */
+}
 
 /* === Modular Cards (under carousel) === */
 .cards-section{ width:min(980px, 100%); margin: 16px auto 0; padding: 0 4px 24px; }
@@ -298,6 +337,7 @@ body::after{
 .carousel-section.is-light .card{
   background:#ffffff;
   border:1px solid rgba(0,0,0,.08);
+  height: 1106px;
 }
 .carousel-section.is-light .card-head{ border-bottom:1px solid rgba(0,0,0,.06); }
 .carousel-section.is-light .card-head .icon{ background:#eef2f7; }

@@ -9,7 +9,13 @@
         { "id": "music1", "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders", "span": "2x1", "minHeight": "120px" }
       ]
     },
-    "cover": { "title": "Capa da Jan 2/4", "image": "./assets/images/161124.jpg" }
+    "cover": { "title": "Capa da Jan 2/4", "image": "./assets/images/161124.jpg" },
+    "stickers": [
+      { "img_src": "./assets/stickers/sticker1.svg", "css": { "top": "-4%", "left": "-2%", "width": "80px", "transform": "rotate(-15deg)" } },
+      { "img_src": "./assets/stickers/sticker2.svg", "css": { "bottom": "15%", "right": "10%", "width": "60px", "opacity": "0.8" } },
+      { "img_src": "./assets/stickers/sticker3.svg", "css": { "bottom": "10%", "right": "5%", "width": "60px", "opacity": "0.8" } },
+      { "img_src": "./assets/stickers/sticker4.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+    ]
 },
   { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
   { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
@@ -34,7 +40,10 @@
         { "id": "txt2", "type": "text", "text": "Add a title...", "span": "2x1" }
       ]
     },
-    "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" }
+    "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" },
+    "stickers": [
+      { "img_src": "./assets/stickers/pipoca.png", "css": { "top": "50%", "left": "50%", "width": "100px", "transform": "translate(-50%, -50%)" } }
+    ]
   },
   { "title": "Coisas Gostosas", "caption": "Como você pode ver, essas duas coisas mais gostosas que eu gosto de comer", "image": "./assets/images/250125.jpg", "date": "25/01/2025" },
  
@@ -52,7 +61,11 @@
         { "id": "link3", "type": "link", "title": "Instagram", "url": "https://instagram.com", "span": "2x1" }
       ]
     },
-    "cover": { "title": "Capa de Março", "subtitle": "Juntos no sábado" }
+    "cover": { "title": "Capa de Março", "subtitle": "Juntos no sábado" },
+    "stickers": [
+      { "img_src": "./assets/stickers/estrela.png", "css": { "top": "8%", "right": "6%", "width": "56px" } },
+      { "img_src": "./assets/stickers/coracao.png", "css": { "bottom": "10%", "left": "12%", "width": "70px", "transform": "rotate(12deg)" } }
+    ]
   },
   { "title": "MAHI MAHI", "caption": "Esse dia dia foi incrível, que eu vão ser duas fotos sim", "image": "./assets/images/150325.JPEG", "date": "15/03/2025" },
   { "title": "Oh muié bonita da gota serena", "caption": "A minha mulher é linda demais, cheirosa e gostosa", "image": "./assets/images/160325.JPEG", "date": "16/03/2025" },

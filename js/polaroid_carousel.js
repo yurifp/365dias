@@ -15,11 +15,9 @@ export async function initPolaroidCarousel({ mount, slides = [], onChange } = {}
   // Build shell
   container.classList.add('polaroid-carousel');
   container.innerHTML = `
-    <button class="nav nav-prev" aria-label="Anterior" type="button">◀</button>
     <div class="polaroid-stage">
       <div class="frame-card"></div>
     </div>
-    <button class="nav nav-next" aria-label="Próximo" type="button">▶</button>
   `;
   const card = container.querySelector('.frame-card');
 
@@ -76,9 +74,6 @@ export async function initPolaroidCarousel({ mount, slides = [], onChange } = {}
 
   function next(){ show(idx+1); }
   function prev(){ show(idx-1); }
-
-  container.querySelector('.nav-prev').addEventListener('click', prev);
-  container.querySelector('.nav-next').addEventListener('click', next);
 
   // Swipe for mobile
   let startX=0, dx=0, touching=false;
