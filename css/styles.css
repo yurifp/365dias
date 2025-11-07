@@ -252,7 +252,7 @@ body::after{
 }
 
 /* === Polaroid Carousel === */
-.carousel-section{ width:min(1100px, 100%); margin:0 auto; height: 2106px; padding: 80px 17px 40px; }
+.carousel-section{ width:min(1100px, 100%); margin:0 auto; height: 2606px; padding: 80px 17px 40px; }
 /* Carousel width responsive to viewport (original sizing) */
 .polaroid-carousel{ display:flex; align-items:center; justify-content:center; gap:12px; width:min(820px, 92vw); margin:0 auto; }
 /* Stage spans full line so the card can be centered perfectly */
