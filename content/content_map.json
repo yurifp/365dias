@@ -14,7 +14,9 @@
       { "img_src": "./assets/stickers/sticker1.svg", "css": { "top": "-4%", "left": "-2%", "width": "80px", "transform": "rotate(-15deg)" } },
       { "img_src": "./assets/stickers/sticker2.svg", "css": { "bottom": "15%", "right": "10%", "width": "60px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker3.svg", "css": { "bottom": "10%", "right": "5%", "width": "60px", "opacity": "0.8" } },
-      { "img_src": "./assets/stickers/sticker4.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+      { "img_src": "./assets/stickers/sticker4.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+      { "img_src": "./assets/stickers/sticker5.svg", "css": { "top": "227%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+       { "img_src": "./assets/stickers/sticker6.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.8" } }
     ]
 },
   { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
