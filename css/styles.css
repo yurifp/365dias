@@ -8,6 +8,11 @@
   --accent-3: #ff637c; /* softer */
   --shadow: 0 10px 40px rgba(0,0,0,.45);
 
+  /* Global tuning for sticker rendering */
+  --sticker-saturation: 1.52;
+  --sticker-contrast: 1.03;
+  --sticker-brightness: 1.0;
+
   /* iOS/Notion/Linktree palette */
   --ios-bg: #f6f8fb;
   --ios-primary: #0066ff;
@@ -276,6 +281,8 @@ body::after{
   position: absolute;
   pointer-events: auto; /* allow interaction if desired */
   z-index: 100000; /* ensure above all */
+  /* Slightly richer look without blowing colors */
+  filter: saturate(var(--sticker-saturation, 1)) contrast(var(--sticker-contrast, 1)) brightness(var(--sticker-brightness, 1));
 }
 
 /* Free-position sticker slots that shrink-wrap to their image */
