@@ -1,5 +1,7 @@
 // app_carousel.js — Normal scroll + polaroid carousel with dynamic content
 import { initPolaroidCarousel } from './polaroid_carousel.js';
+import { runStickerAction, registerDefaultStickerActions } from './sticker_actions.js';
+import './sticker_custom.js';
 import { initDateChip, setDateMap, setDefaultDay } from './date_chip.js';
 import { renderCards } from './cards.js';
 
@@ -62,6 +64,8 @@ function updateExternalContent(slide){
 }
 
 async function init(){
+  // Register a small set of built-in actions; you can add more in sticker_actions.js
+  registerDefaultStickerActions();
   const slides = await loadContent();
   // Optionally merge external cards map by id
   const cardsMap = await loadCardsMap();
@@ -118,6 +122,14 @@ async function init(){
   updateStickers(slide);
     }
   });
+  // Expor controle simples para ações como navigate-slide
+  window.carouselControl = {
+    next: carousel.next,
+    prev: carousel.prev,
+    show: carousel.show,
+    getIndex: carousel.getIndex,
+    count: () => slides.length
+  };
   // Stickers are not constrained to a single container; they mount anywhere
   // Initialize date chip after card exists; it auto-mounts inside .frame-card
   initDateChip(chipDriver);
@@ -142,7 +154,9 @@ function updateStickers(slide){
   // Remove previously rendered slide-owned stickers
   document.querySelectorAll('img.slide-sticker[data-owner="carousel"]').forEach(n=> n.remove());
   const items = slide && Array.isArray(slide.stickers) ? slide.stickers : [];
-  if (!items.length) return;
+    if (!items.length) return;
+    // Debug: listar stickers criados
+    // console.log('[updateStickers] rendering', items.map(x=>x.id||x.img_src));
   items.forEach((s,i)=>{
     if (!s || !s.img_src) return;
     const defaultMount = document.querySelector('#polaroidCarousel') || document.body;
@@ -154,6 +168,7 @@ function updateStickers(slide){
     img.className = 'slide-sticker';
     img.dataset.owner = 'carousel';
     img.dataset.index = String(i);
+    img.dataset.stickerId = String(s.id || `sticker-${i}`);
     // Default to absolute positioning if not provided
     if (!(s.css && 'position' in s.css)) img.style.position = 'absolute';
     // Apply inline css
@@ -161,6 +176,22 @@ function updateStickers(slide){
       Object.entries(s.css).forEach(([k,v])=>{ try{ img.style[k] = String(v); }catch{} });
     }
     if (!img.style.zIndex) img.style.zIndex = '100000';
+    // Click action wiring from JSON: accept string or {name, args}
+    let action = s.action || s.onClick || s.on_click || null;
+    // Fallback: se não houver action, tentar mapear pelo id para uma função homônima em StickerFns
+    if (!action && (s.id || s.name)){
+      const fnName = s.action_fn || s.id || s.name;
+      // Anexar mesmo se função ainda não estiver registrada; o dispatcher resolve em runtime
+      action = { name: 'call', args: { fn: fnName } };
+    }
+    if (action){
+      img.setAttribute('role','button');
+      img.tabIndex = 0;
+      img.style.pointerEvents = 'auto';
+      const trigger = (ev) => { if(ev) ev.stopPropagation(); runStickerAction(action, { element: img, id: img.dataset.stickerId, index:i, slide }); };
+      img.addEventListener('click', trigger);
+      img.addEventListener('keydown', (ev)=>{ if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); ev.stopPropagation(); trigger(ev); } });
+    }
     mount.appendChild(img);
   });
 }
@@ -181,6 +212,22 @@ function seedStaticStickerSlots(){
           const obj = JSON.parse(css);
           Object.entries(obj).forEach(([k,v])=>{ try{ img.style[k] = String(v); }catch{} });
         }catch{}
+      }
+      // Optional action via data-action and data-action-args JSON
+      const actionName = slot.getAttribute('data-action');
+      const actionArgsRaw = slot.getAttribute('data-action-args');
+      let action = null;
+      if (actionName){
+        let args = {};
+        if (actionArgsRaw){ try{ args = JSON.parse(actionArgsRaw); }catch{} }
+        action = { name: actionName, args };
+      }
+      if (action){
+        img.setAttribute('role','button');
+        img.tabIndex = 0;
+        const trigger = () => runStickerAction(action, { element: img, id: slot.id || '', index: 0, slide: null });
+        img.addEventListener('click', trigger);
+        img.addEventListener('keydown', (ev)=>{ if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); trigger(); } });
       }
       slot.appendChild(img);
     }

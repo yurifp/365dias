@@ -1,26 +1,33 @@
 [
-  { "title": "O pedido", "caption": "Flores, chocolate e um Outback cheio de gente — o dia em que tudo começou de verdade.", "image": "./assets/images/091124.png", "date": "09.11.2024" 
-    ,"widgets": {
-      "title": "Coleção",
-      "subtitle": "Widgets da foto — personalizados",
-      "items": [
-        { "id": "map1", "type": "map", "title": "Salvador, BR", "subtitle": "Localização", "span": "2x2", "minHeight": "160px" },
-        { "id": "vid1", "type": "video", "title": "Clipe curto", "subtitle": "Vídeo", "span": "2x2", "vars": { "--w-min-h": "200px" } },
-        { "id": "music1", "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders", "span": "2x1", "minHeight": "120px" }
-      ]
-    },
-    "cover": { "title": "Capa da Jan 2/4", "image": "./assets/images/161124.jpg" },
+  { "title": "O pedido", "caption": "Flores, chocolate e um Outback cheio de gente — o dia em que tudo começou de verdade.", "image": "./assets/images/091124.png", "date": "09.11.2024",
+  
     "stickers": [
-      { "img_src": "./assets/stickers/sticker1.svg", "css": { "top": "-4%", "left": "-2%", "width": "80px", "transform": "rotate(-15deg)" } },
+  { "id": "sticker1", "img_src": "./assets/stickers/sticker1.svg", "css": { "top": "-4%", "left": "-2%", "width": "80px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
       { "img_src": "./assets/stickers/sticker2.svg", "css": { "bottom": "15%", "right": "10%", "width": "60px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker3.svg", "css": { "bottom": "10%", "right": "5%", "width": "60px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker4.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker5.svg", "css": { "top": "227%", "right": "8%", "width": "329px", "opacity": "0.8" } },
        { "img_src": "./assets/stickers/sticker6.svg", "css": { "top": "427%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-       { "img_src": "./assets/stickers/sticker7.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+       { "img_src": "./assets/stickers/sticker7.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+        
+       { "img_src": "./assets/stickers/sticker8.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.9" } }
     ]
 },
-  { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024" },
+  { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024",
+"stickers": [
+      { "img_src": "./assets/stickers/sticker9.svg", "css": { "top": "-13%", "left": "3%", "width": "147px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
+      { "img_src": "./assets/stickers/sticker10.svg", "css": { "bottom": "-34%", "right": "6%", "width": "78px", "opacity": "0.8", "transform": "rotate(-26deg)" } },
+      { "img_src": "./assets/stickers/sticker.svg", "css": { "bottom": "10%", "right": "5%", "width": "60px", "opacity": "0.8" } },
+      { "img_src": "./assets/stickers/sticker11.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+      { "img_src": "./assets/stickers/sticker5.svg", "css": { "top": "227%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+       { "img_src": "./assets/stickers/sticker6.svg", "css": { "top": "427%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+       { "img_src": "./assets/stickers/sticker7.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+        
+       { "img_src": "./assets/stickers/sticker8.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+    ]
+
+},
+  
   { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
   
 
@@ -32,17 +39,6 @@
   { "title": "Yakisoba e Gelato", "caption": "Nosso yakisoba favorito, nosso gelato favorito e minha pessoa favorita..", "image": "./assets/images/040125.jpg", "date": "04/01/2025" },
   
   { "title": "Zé Lambidas", "caption": "Vulgo bolota", "image": "./assets/images/120125.JPEG", "date": "12/01/2025",
-    "widgets": {
-      "title": "Coleção",
-      "subtitle": "Widgets da foto — personalizados",
-      "items": [
-        { "id": "map2", "type": "map", "title": "Salvador, BR", "subtitle": "Localização", "colSpan": 2, "rowSpan": 2, "vars": { "--w-min-h": "220px" } },
-        { "id": "vid2", "type": "video", "title": "Clipe curto", "subtitle": "Vídeo", "span": "2x1" },
-        { "id": "music2", "type": "music", "title": "Nossa música", "track": "Shooting Stars", "artist": "Bag Raiders", "span": "1x2" },
-        { "id": "link2", "type": "link", "title": "yurifp.dev", "url": "https://yurifp.dev" },
-        { "id": "txt2", "type": "text", "text": "Add a title...", "span": "2x1" }
-      ]
-    },
     "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" },
     "stickers": [
       { "img_src": "./assets/stickers/pipoca.png", "css": { "top": "50%", "left": "50%", "width": "100px", "transform": "translate(-50%, -50%)" } }
@@ -55,16 +51,6 @@
   { "title": "El ranchito x Picanha Bloomin'Burguer", "caption": "‘nosso rolê padrão’, mas nunca é só mais um dia.", "image": "./assets/images/280225.JPEG", "date": "28/02/2025" }, 
 
   { "title": "Minha Cerejinha", "caption": "Um pôr do sol calmo, muitos risadas e a sensação de que aquele seria um dos dias que eu sempre lembraria com carinho", "image": "./assets/images/g280325-3.png", "date": "15/03/2025",
-    "widgets": {
-      "title": "Coleção",
-      "subtitle": "Blocos desta foto",
-      "items": [
-        { "id": "map3", "type": "map", "title": "Shopping", "subtitle": "Local", "span": "2x1" },
-        { "id": "music3", "type": "music", "title": "Nossa música", "track": "Yellow", "artist": "Coldplay", "minHeight": "140px" },
-        { "id": "link3", "type": "link", "title": "Instagram", "url": "https://instagram.com", "span": "2x1" }
-      ]
-    },
-    "cover": { "title": "Capa de Março", "subtitle": "Juntos no sábado" },
     "stickers": [
       { "img_src": "./assets/stickers/estrela.png", "css": { "top": "8%", "right": "6%", "width": "56px" } },
       { "img_src": "./assets/stickers/coracao.png", "css": { "bottom": "10%", "left": "12%", "width": "70px", "transform": "rotate(12deg)" } }

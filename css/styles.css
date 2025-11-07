@@ -284,6 +284,18 @@ body::after{
   /* Slightly richer look without blowing colors */
   filter: saturate(var(--sticker-saturation, 1)) contrast(var(--sticker-contrast, 1)) brightness(var(--sticker-brightness, 1));
 }
+.slide-sticker[role="button"]{ cursor: pointer; }
+
+/* Minimal modal + tooltip for sticker actions */
+.sticker-modal{ position: fixed; inset: 0; display: grid; place-items: center; z-index: 1000000; pointer-events: none; opacity: 0; transition: opacity .2s ease; }
+.sticker-modal.is-open{ pointer-events: auto; opacity: 1; }
+.sticker-modal-backdrop{ position: absolute; inset: 0; background: rgba(0,0,0,.5); }
+.sticker-modal-panel{ position: relative; width: min(92vw, 560px); max-height: 80vh; overflow:auto; border-radius: 16px; background: #fff; color:#111; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.sticker-modal-close{ position: absolute; top:6px; right:8px; border:0; background:transparent; font-size: 24px; line-height:1; cursor:pointer; color:#111; }
+.sticker-modal-content{ padding: 16px; }
+
+.sticker-tooltip{ position: fixed; transform: translateX(-50%); background: rgba(17,17,17,.9); color: #fff; padding: 6px 10px; border-radius: 8px; font-size: 12px; z-index: 1000000; pointer-events: none; opacity: 0; transition: opacity .15s ease, transform .15s ease; }
+.sticker-tooltip.is-show{ opacity: 1; transform: translate(-50%, -2px); }
 
 /* Free-position sticker slots that shrink-wrap to their image */
 .sticker-slot{

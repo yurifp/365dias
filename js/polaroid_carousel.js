@@ -85,8 +85,9 @@ export async function initPolaroidCarousel({ mount, slides = [], onChange } = {}
     if (dx > TH) prev(); else if (dx < -TH) next();
   }, { passive:true });
 
-  // Click areas: left/right half of card
+  // Click areas: left/right half of card (ignora clique em sticker com role="button")
   card.addEventListener('click', (e)=>{
+    if (e.target && e.target.closest && e.target.closest('.slide-sticker[role="button"]')) return;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     if (x < rect.width/2) prev(); else next();
