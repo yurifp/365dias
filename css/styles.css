@@ -257,22 +257,155 @@ body::after{
 }
 
 /* === Polaroid Carousel === */
-.carousel-section{ width:min(1100px, 100%); margin:0 auto; height: 2606px; padding: 80px 17px 40px; }
+.carousel-section{ width:min(1100px, 100%); margin:0 auto; height: 3506px; padding: 80px 17px 40px; }
+
+/* Carousel container with navigation - sem limitação de largura */
+.carousel-container {
+  position: relative;
+  display: block; /* Mudou de flex para block */
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* Carousel width responsive to viewport (original sizing) */
-.polaroid-carousel{ display:flex; align-items:center; justify-content:center; gap:12px; width:min(820px, 92vw); margin:0 auto; }
+.polaroid-carousel{ 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 12px; 
+  width: min(820px, 92vw); 
+  margin: 0 auto;
+}
+
 /* Stage spans full line so the card can be centered perfectly */
 .polaroid-carousel .polaroid-stage{ flex:1 0 auto; display:grid; place-items:center; width:100%; }
 /* Photo size — restore exactly the original feel */
 .polaroid-carousel .frame-card svg{ width:min(84vw, 520px); height:auto; display:block; }
 .polaroid-carousel .nav{ background: linear-gradient(180deg, #22262d, #171a20); color: var(--ink); border:1px solid rgba(255,255,255,.12); width:42px; height:42px; border-radius:50%; display:grid; place-items:center; cursor:pointer; transition:.25s; box-shadow: var(--shadow); }
 .polaroid-carousel .nav:hover{ transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.35) }
+
+/* Navigation buttons inspired by CodePen */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(255 255 255 / 38%);
+  backdrop-filter: blur(8px);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 48px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 400ms ease-out;
+  z-index: 100;
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.carousel-nav-btn:focus {
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.3), 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-nav-prev {
+  left: calc(50% - min(410px, 46vw) - 60px); /* Posiciona com base no centro da polaroid */
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-right: none;
+  padding-right: 4px;
+}
+
+.carousel-nav-next {
+  right: calc(50% - min(410px, 46vw) - 60px); /* Posiciona com base no centro da polaroid */
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-left: none;
+  padding-left: 4px;
+}
+
+.carousel-nav-btn:hover {
+  background: rgb(255 255 255 / 38%);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .carousel-nav-btn {
+    width: 42px;
+    height: 70px;
+  }
+  
+  .carousel-nav-prev {
+    left: calc(50% - min(410px, 46vw) - 50px);
+  }
+  
+  .carousel-nav-next {
+    right: calc(50% - min(410px, 46vw) - 50px);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .carousel-nav-btn {
+    width: 36px;
+    height: 60px;
+  }
+  
+  .carousel-nav-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .carousel-nav-prev {
+    left: calc(50% - min(410px, 46vw) - 1px);
+  }
+  
+  .carousel-nav-next {
+    right: calc(50% - min(410px, 46vw) - 1px);
+  }
+}
+
+/* Extra small screens - make buttons smaller but keep them visible */
+@media (max-width: 380px) {
+  .carousel-nav-btn {
+    width: 30px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.95);
+  }
+  
+  .carousel-nav-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .carousel-nav-prev {
+    left: calc(50% - min(410px, 46vw) - 35px);
+  }
+  
+  .carousel-nav-next {
+    right: calc(50% - min(410px, 46vw) - 35px);
+  }
+}
+
 .carousel-content h2{ font-size: clamp(18px, 3.6vw, 28px); }
 .carousel-content p{ font-size: 14px; }
 /* Expanded content container to match polaroid width and remove inline styles */
 .carousel-content{ max-width: 860px; margin: 24px auto 0; text-align: left; }
 
-/* With navs removed, use grid on the mount to guarantee perfect centering */
-#polaroidCarousel{ position: relative; display:grid; place-items:center; }
+/* With navs, use grid on the mount to guarantee perfect centering */
+#polaroidCarousel{ 
+  position: relative; 
+  display: grid; 
+  place-items: center; 
+}
 
 /* Stickers can live anywhere; no single container required */
 
@@ -288,6 +421,8 @@ body::after{
 
 /* During intro overlay, force-hide stickers to avoid visual bleeding */
 html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none !important; }
+
+/* (revert) — sem limites adicionais para stickers no mobile */
 
 /* Minimal modal + tooltip for sticker actions */
 .sticker-modal{ position: fixed; inset: 0; display: grid; place-items: center; z-index: 1000000; pointer-events: none; opacity: 0; transition: opacity .2s ease; }

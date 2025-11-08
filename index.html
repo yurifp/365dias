@@ -21,7 +21,23 @@
 
     <!-- Polaroid Carousel Section (única seção) -->
   <section class="carousel-section is-light">
-      <div id="polaroidCarousel"></div>
+      <div class="carousel-container">
+        <div id="polaroidCarousel"></div>
+        
+        <!-- Navigation buttons inspired by CodePen -->
+        <button class="carousel-nav-btn carousel-nav-prev" aria-label="Anterior" data-action="prev">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+        
+        <button class="carousel-nav-btn carousel-nav-next" aria-label="Próximo" data-action="next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
+      </div>
+      
       <div class="carousel-content">
         <h2 id="carouselTitle" style="margin:0 0 8px;"></h2>
         <p id="carouselDesc" style="margin:0 0 4px; color: var(--muted)"></p>

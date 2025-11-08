@@ -13,7 +13,7 @@
        { "img_src": "./assets/stickers/sticker8.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.9" } }
     ]
 },
-  { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16/11/2024",
+  { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16.11.2024",
 "stickers": [
       { "img_src": "./assets/stickers/sticker9.svg", "css": { "top": "-13%", "left": "3%", "width": "147px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
       { "img_src": "./assets/stickers/sticker10.svg", "css": { "bottom": "-34%", "right": "6%", "width": "78px", "opacity": "0.8", "transform": "rotate(-26deg)" } },
@@ -22,8 +22,8 @@
     ]
 
 },
-  
-  { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024",
+
+  { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23.11.2024",
    "stickers": [
 
       { "img_src": "./assets/stickers/sticker15.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
@@ -34,7 +34,7 @@
 },
   
 
-  { "title": "Poke, cinema e gelato", "caption": "Esse wikipoke nos vendeu a ideia de que eles eram muito bons kkkk", "image": "./assets/images/071224.jpg", "date": "07/12/2024",
+  { "title": "Poke, cinema e gelato", "caption": "Esse wikipoke nos vendeu a ideia de que eles eram muito bons kkkk", "image": "./assets/images/071224.jpg", "date": "07.12.2024",
      "stickers": [
 
       { "img_src": "./assets/stickers/sticker20.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
@@ -46,7 +46,7 @@
 },
 
 
-  { "title": "Dia de compras", "caption": "Um limãozinho para outro Limãozinho🍋", "image": "./assets/images/141224.jpg", "date": "14/12/2024",
+  { "title": "Dia de compras", "caption": "Um limãozinho para outro Limãozinho🍋", "image": "./assets/images/141224.jpg", "date": "14.12.2024",
   
        "stickers": [
 
@@ -58,30 +58,44 @@
 
 
 },
-  { "title": "Natal com sabor de limão", "caption": "você me deu um Limoncello e outros milhares de motivos pra sorrir", "image": "./assets/images/231224.jpg", "date": "23/12/2024" },
-  { "title": "MAMMA JAMMA", "caption": "Será que a gente gosta da culinária italiana?", "image": "./assets/images/281224.jpg", "date": "28/12/2024" },
+  { "title": "Natal com sabor de limão", "caption": "você me deu um Limoncello e outros milhares de motivos pra sorrir", "image": "./assets/images/231224.jpg", "date": "23.12.2024" },
+  { "title": "MAMMA JAMMA", "caption": "Será que a gente gosta da culinária italiana?", "image": "./assets/images/281224.jpg", "date": "28.12.2024" },
 
-  { "title": "Yakisoba e Gelato", "caption": "Nosso yakisoba favorito, nosso gelato favorito e minha pessoa favorita..", "image": "./assets/images/040125.jpg", "date": "04/01/2025" },
-  
-  { "title": "Zé Lambidas", "caption": "Vulgo bolota", "image": "./assets/images/120125.JPEG", "date": "12/01/2025",
+  { "title": "Yakisoba e Gelato", "caption": "Nosso yakisoba favorito, nosso gelato favorito e minha pessoa favorita..", "image": "./assets/images/040125.jpg", "date": "04.01.2025" },
+
+  { "title": "Zé Lambidas", "caption": "Vulgo bolota", "image": "./assets/images/120125.JPEG", "date": "12.01.2025",
     "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" },
     "stickers": [
       { "img_src": "./assets/stickers/pipoca.png", "css": { "top": "50%", "left": "50%", "width": "100px", "transform": "translate(-50%, -50%)" } }
     ]
   },
-  { "title": "Coisas Gostosas", "caption": "Como você pode ver, essas duas coisas mais gostosas que eu gosto de comer", "image": "./assets/images/250125.jpg", "date": "25/01/2025" },
+  { "title": "Coisas Gostosas", "caption": "Como você pode ver, essas duas coisas mais gostosas que eu gosto de comer", "image": "./assets/images/250125.jpg", "date": "25.01.2025" },
  
 
-  { "title": "Airbnb do empreendedor", "caption": "Uma relaxadinha depois do trabalho presencial 🫣", "image": "./assets/images/140225.JPEG", "date": "14/02/2025" },
+  { "title": "Airbnb do empreendedor", "caption": "Uma relaxadinha depois do trabalho presencial 🫣", "image": "./assets/images/140225.JPEG", "date": "14.02.2025" },
   { "title": "El ranchito x Picanha Bloomin'Burguer", "caption": "‘nosso rolê padrão’, mas nunca é só mais um dia.", "image": "./assets/images/280225.JPEG", "date": "28/02/2025" }, 
 
-  { "title": "Minha Cerejinha", "caption": "Um pôr do sol calmo, muitos risadas e a sensação de que aquele seria um dos dias que eu sempre lembraria com carinho", "image": "./assets/images/g280325-3.png", "date": "15/03/2025",
+  { "title": "Minha Cerejinha", "caption": "Um pôr do sol calmo, muitos risadas e a sensação de que aquele seria um dos dias que eu sempre lembraria com carinho", "image": "./assets/images/g280325-3.png", "date": "15.03.2025",
     "stickers": [
-      { "img_src": "./assets/stickers/estrela.png", "css": { "top": "8%", "right": "6%", "width": "56px" } },
-      { "img_src": "./assets/stickers/coracao.png", "css": { "bottom": "10%", "left": "12%", "width": "70px", "transform": "rotate(12deg)" } }
+
+      { "img_src": "./assets/stickers/ghi1.png", "css": { "bottom": "-156%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/ghi2.png", "css": { "bottom": "-276%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/ghi3.png", "css": { "bottom": "-386%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/ghi4.png", "css": { "bottom": "-496%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+      { "img_src": "./assets/stickers/ghi5.png", "css": { "bottom": "-606%", "right": "8%", "width": "329px", "opacity": "0.8" } }
     ]
   },
-  { "title": "MAHI MAHI", "caption": "Esse dia dia foi incrível, que eu vão ser duas fotos sim", "image": "./assets/images/150325.JPEG", "date": "15/03/2025" },
+  { "title": "MAHI MAHI", "caption": "Esse dia dia foi incrível, que eu vão ser duas fotos sim", "image": "./assets/images/150325.JPEG", "date": "15/03/2025",
+
+         "stickers": [
+
+      { "img_src": "./assets/stickers/sticker70.svg", "css": { "bottom": "-183%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker71.svg", "css": { "bottom": "-300%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker32.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker33.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+    ]
+
+},
   { "title": "Oh muié bonita da gota serena", "caption": "A minha mulher é linda demais, cheirosa e gostosa", "image": "./assets/images/160325.JPEG", "date": "16/03/2025" },
 
   { "title": "Van Gogh", "caption": "Van Gogh amou o amarelo porque não conheceu o castanho dos seus olhos, ele ficaria fascinado, assim como eu.", "image": "./assets/images/130425.JPEG", "date": "13/04/2025" },

@@ -130,6 +130,10 @@ async function init(){
     getIndex: carousel.getIndex,
     count: () => slides.length
   };
+  
+  // Setup navigation buttons
+  setupNavigationButtons(carousel);
+  
   // Stickers are not constrained to a single container; they mount anywhere
   // Initialize date chip after card exists; it auto-mounts inside .frame-card
   initDateChip(chipDriver);
@@ -160,7 +164,7 @@ function updateStickers(slide){
   items.forEach((s,i)=>{
     if (!s || !s.img_src) return;
     const defaultMount = document.querySelector('#polaroidCarousel') || document.body;
-    const mount = (s.mount && typeof s.mount === 'string') ? document.querySelector(s.mount) : defaultMount;
+    let mount = (s.mount && typeof s.mount === 'string') ? document.querySelector(s.mount) : defaultMount;
     if (!mount) return;
     const img = document.createElement('img');
     img.src = s.img_src;
@@ -231,5 +235,53 @@ function seedStaticStickerSlots(){
       }
       slot.appendChild(img);
     }
+  });
+}
+
+// Setup navigation buttons functionality
+function setupNavigationButtons(carousel) {
+  const prevBtn = document.querySelector('.carousel-nav-prev');
+  const nextBtn = document.querySelector('.carousel-nav-next');
+  
+  if (!prevBtn || !nextBtn) return;
+  
+  // Add click handlers
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    carousel.prev();
+  });
+  
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    carousel.next();
+  });
+  
+  // Add keyboard support
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    
+    switch(e.key) {
+      case 'ArrowLeft':
+        e.preventDefault();
+        carousel.prev();
+        break;
+      case 'ArrowRight':
+        e.preventDefault();
+        carousel.next();
+        break;
+    }
+  });
+  
+  // Add touch feedback
+  [prevBtn, nextBtn].forEach(btn => {
+    btn.addEventListener('touchstart', () => {
+      btn.style.transform = btn.style.transform.replace(/scale\([^)]*\)/, '') + ' scale(0.95)';
+    }, { passive: true });
+    
+    btn.addEventListener('touchend', () => {
+      btn.style.transform = btn.style.transform.replace(/scale\([^)]*\)/, '');
+    }, { passive: true });
   });
 }

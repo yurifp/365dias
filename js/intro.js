@@ -126,10 +126,10 @@
     // Placeholders — edite os textos abaixo para sua narrativa
     await showMessage([{ text: '— 365 dias ao seu lado —', className: 'line-serif' }], { container, hold: 2200 });
     if (cancelled) return;
-    await showMessage([{ text: '—  —', className: 'line-serif' }], { container, hold: 2200 });
+    await showMessage([{ text: '— Nossa história começa aqui —', className: 'line-serif' }], { container, hold: 2200 });
     if (cancelled) return;
     // opcional: terceira
-    await showMessage([{ text: '— terceira frase opcional —', className: 'line-serif' }], { container, hold: 2000 });
+    await showMessage([{ text: '— 365 dias scrapbook <3 —', className: 'line-serif' }], { container, hold: 2000 });
 
     if (!cancelled) end();
   }
