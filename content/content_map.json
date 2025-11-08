@@ -25,8 +25,7 @@
   
   { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024",
    "stickers": [
-      { "img_src": "./assets/stickers/sticker.svg", "css": { "top": "-13%", "left": "3%", "width": "147px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
-      { "img_src": "./assets/stickers/sticker.svg", "css": { "bottom": "-34%", "right": "6%", "width": "78px", "opacity": "0.8", "transform": "rotate(-26deg)" } },
+
       { "img_src": "./assets/stickers/sticker15.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
      { "img_src": "./assets/stickers/sticker16.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } },
      { "img_src": "./assets/stickers/sticker17.svg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.8" } },
@@ -35,8 +34,30 @@
 },
   
 
-  { "title": "Poke, cinema e gelato", "caption": "Esse wikipoke nos vendeu a ideia de que eles eram muito bons kkkk", "image": "./assets/images/071224.jpg", "date": "07/12/2024" },
-  { "title": "Dia de compras", "caption": "Um limãozinho para outro Limãozinho🍋", "image": "./assets/images/141224.jpg", "date": "14/12/2024" },
+  { "title": "Poke, cinema e gelato", "caption": "Esse wikipoke nos vendeu a ideia de que eles eram muito bons kkkk", "image": "./assets/images/071224.jpg", "date": "07/12/2024",
+     "stickers": [
+
+      { "img_src": "./assets/stickers/sticker20.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker21.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker22.svg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker23.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+    ]
+
+},
+
+
+  { "title": "Dia de compras", "caption": "Um limãozinho para outro Limãozinho🍋", "image": "./assets/images/141224.jpg", "date": "14/12/2024",
+  
+       "stickers": [
+
+      { "img_src": "./assets/stickers/sticker30.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker31.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker32.svg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker33.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+    ]
+
+
+},
   { "title": "Natal com sabor de limão", "caption": "você me deu um Limoncello e outros milhares de motivos pra sorrir", "image": "./assets/images/231224.jpg", "date": "23/12/2024" },
   { "title": "MAMMA JAMMA", "caption": "Será que a gente gosta da culinária italiana?", "image": "./assets/images/281224.jpg", "date": "28/12/2024" },
 
