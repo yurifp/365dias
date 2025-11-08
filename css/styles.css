@@ -286,6 +286,9 @@ body::after{
 }
 .slide-sticker[role="button"]{ cursor: pointer; }
 
+/* During intro overlay, force-hide stickers to avoid visual bleeding */
+html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none !important; }
+
 /* Minimal modal + tooltip for sticker actions */
 .sticker-modal{ position: fixed; inset: 0; display: grid; place-items: center; z-index: 1000000; pointer-events: none; opacity: 0; transition: opacity .2s ease; }
 .sticker-modal.is-open{ pointer-events: auto; opacity: 1; }
