@@ -5,16 +5,21 @@
       "url": "https://www.google.com/maps?q=-12.9785389,-38.4550888&z=18&output=embed",
       "title": "Mapa - Outback Steakhouse Salvador Shopping"
     },
+    "hasMusic": true,
+    "musicConfig": {
+      "src": "https://open.spotify.com/embed/track/3QaPy1KgI7nu9FJEQUgn6h?utm_source=generator",
+      "title": "WILDFLOWER - Billie Eilish"
+    },
     "stickers": [
   { "id": "sticker1", "img_src": "./assets/stickers/sticker1.svg", "css": { "top": "-4%", "left": "-2%", "width": "80px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
       { "img_src": "./assets/stickers/sticker2.svg", "css": { "bottom": "15%", "right": "10%", "width": "60px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker3.svg", "css": { "bottom": "10%", "right": "5%", "width": "60px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker4.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker5.svg", "css": { "top": "227%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-       { "img_src": "./assets/stickers/sticker6.svg", "css": { "top": "427%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-       { "img_src": "./assets/stickers/sticker7.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+       { "img_src": "./assets/stickers/sticker6.svg", "css": { "top": "413%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+       { "img_src": "./assets/stickers/sticker7.svg", "css": { "top": "511%", "right": "8%", "width": "329px", "opacity": "0.8" } },
         
-       { "img_src": "./assets/stickers/sticker8.svg", "css": { "top": "327%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+       { "img_src": "./assets/stickers/sticker8.svg", "css": { "top": "511%", "right": "8%", "width": "329px", "opacity": "0.9" } }
     ]
 },
   { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16.11.2024",
@@ -121,6 +126,11 @@
     "mapConfig": {
       "url": "https://www.google.com/maps?q=-13.0043,-38.4712&z=17&output=embed",
       "title": "Mapa - Local do dia dos namorados"
+    },
+    "hasMusic": true,
+    "musicConfig": {
+      "src": "https://open.spotify.com/embed/track/1dne6HxFE2LL5pM5bXaZd4?utm_source=generator",
+      "title": "Trilha sonora romântica do nosso dia dos namorados"
     }
   },
   { "title": "No nosso apê no Mandarim", "caption": "Tava um friooo, os ventos batendo as janelas e as plantas.", "image": "./assets/images/140625.JPEG", "date": "14.06.2025" },

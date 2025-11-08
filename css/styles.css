@@ -9,8 +9,8 @@
   --shadow: 0 10px 40px rgba(0,0,0,.45);
 
   /* Global tuning for sticker rendering */
-  --sticker-saturation: 1.52;
-  --sticker-contrast: 1.03;
+  --sticker-saturation: 1.62;
+  --sticker-contrast: 1.13;
   --sticker-brightness: 1.0;
 
   /* iOS/Notion/Linktree palette */
@@ -614,7 +614,7 @@ html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none 
   margin: 24px auto 32px;
   background: #f8fafc;
   position: relative;
-  top: 55%;
+  top: 68%;
 }
 
 .map-wrap iframe {
@@ -705,4 +705,121 @@ html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none 
 .carousel-section.is-light .loading-spinner {
   border-color: #f1f5f9;
   border-top-color: #3b82f6;
+}
+
+/* === Music Widget Styles === */
+.music-wrap {
+  margin: 24px auto 32px;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  position: relative;
+  top: 19%;
+}
+
+.music-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 352px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Music placeholder with Spotify-like styling */
+.music-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  background: linear-gradient(135deg, #191414 0%, #121212 100%);
+  color: #1DB954;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.music-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.spotify-icon {
+  opacity: 0.9;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.music-loading p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* Mobile optimizations */
+@media (max-width: 430px) {
+  .music-wrap {
+    min-height: 280px;
+    margin: 16px auto 24px;
+    border-radius: 12px;
+  }
+  
+
+  
+  .music-placeholder {
+    min-height: 280px;
+    padding: 24px 16px;
+  }
+}
+
+/* Tablet and desktop */
+@media (min-width: 768px) {
+  .music-wrap {
+    min-height: 400px;
+    margin: 32px auto 48px;
+    border-radius: 20px;
+  }
+  
+  .music-wrap iframe {
+    height: 400px;
+  }
+  
+  .music-placeholder {
+    min-height: 400px;
+    padding: 48px 32px;
+  }
+}
+
+/* Light theme adjustments for music */
+.carousel-section.is-light .music-wrap {
+  background: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.carousel-section.is-light .music-placeholder {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #1DB954;
+}
+
+.carousel-section.is-light .music-loading p {
+  color: #334155;
 }

@@ -5,6 +5,7 @@ import './sticker_custom.js';
 import { initDateChip, setDateMap, setDefaultDay } from './date_chip.js';
 import { renderCards } from './cards.js';
 import { initMapWidget, renderMapWidget, shouldRenderMap } from './mapWidget.js';
+import { initMusicWidget, renderMusicWidget, shouldRenderMusic } from './musicWidget.js';
 
 async function loadContent(){
   try{
@@ -23,6 +24,9 @@ async function loadContent(){
       stickers: Array.isArray(v.stickers) ? v.stickers : null,
       hasMap: v.hasMap === true || v.showMap === true,
       mapConfig: v.mapConfig || null,
+      hasMusic: v.hasMusic === true || v.showMusic === true,
+      musicConfig: v.musicConfig || null,
+      musicSrc: v.musicSrc || null,
     }));
   }catch(err){
     console.warn('Falha ao carregar content_map.json. Usando demo.', err);
@@ -72,6 +76,9 @@ async function init(){
   
   // Initialize map widget system
   initMapWidget();
+  
+  // Initialize music widget system
+  initMusicWidget();
   
   const slides = await loadContent();
   // Optionally merge external cards map by id
@@ -149,6 +156,28 @@ async function init(){
         });
       }
       
+      // Render music widget if needed (renderMusicWidget already handles cleanup)
+      if (shouldRenderMusic(slide) && carouselSection) {
+        renderMusicWidget(slide, carouselSection);
+      } else if (carouselSection) {
+        // Remove music widgets if slide doesn't need one
+        const existingMusic = carouselSection.querySelectorAll('.music-wrap');
+        existingMusic.forEach(music => {
+          if (window.anime) {
+            anime({
+              targets: music,
+              opacity: [1, 0],
+              translateY: [0, 20],
+              duration: 400,
+              easing: 'easeInQuart',
+              complete: () => music.remove()
+            });
+          } else {
+            music.remove();
+          }
+        });
+      }
+      
       // widgets/cover removidos
       updateStickers(slide);
     }
@@ -180,6 +209,11 @@ async function init(){
   const carouselSection = document.querySelector('.carousel-section');
   if (shouldRenderMap(slides[0]) && carouselSection) {
     renderMapWidget(slides[0], carouselSection);
+  }
+  
+  // Initial music widget
+  if (shouldRenderMusic(slides[0]) && carouselSection) {
+    renderMusicWidget(slides[0], carouselSection);
   }
   
   // widgets/cover removidos
