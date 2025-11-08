@@ -23,7 +23,14 @@
 
 },
   
-  { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024" },
+  { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23/11/2024",
+   "stickers": [
+      { "img_src": "./assets/stickers/sticker.svg", "css": { "top": "-13%", "left": "3%", "width": "147px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
+      { "img_src": "./assets/stickers/sticker.svg", "css": { "bottom": "-34%", "right": "6%", "width": "78px", "opacity": "0.8", "transform": "rotate(-26deg)" } },
+      { "img_src": "./assets/stickers/sticker15.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker16.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+    ]
+},
   
 
   { "title": "Poke, cinema e gelato", "caption": "Esse wikipoke nos vendeu a ideia de que eles eram muito bons kkkk", "image": "./assets/images/071224.jpg", "date": "07/12/2024" },
