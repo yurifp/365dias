@@ -34,6 +34,12 @@ body{
     scroll-snap-type: none;
   overflow-x: hidden !important; /* prevent accidental horizontal scroll */
   touch-action: pan-y; /* allow only vertical panning */
+  /* Better font rendering and prevent iOS zoom */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Hard-stop any horizontal scroll from nested containers or media */
@@ -367,6 +373,12 @@ body::after{
   .carousel-nav-next {
     right: calc(50% - min(410px, 46vw) - 1px);
   }
+
+  /* iOS/Safari specific fixes for sticker positioning */
+  .slide-sticker {
+    /* Only add font smoothing for better rendering without changing position */
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
 /* Extra small screens - make buttons smaller but keep them visible */
@@ -414,6 +426,8 @@ body::after{
   filter: saturate(var(--sticker-saturation, 1)) contrast(var(--sticker-contrast, 1)) brightness(var(--sticker-brightness, 1));
 }
 .slide-sticker[role="button"]{ cursor: pointer; }
+
+
 
 /* During intro overlay, force-hide stickers to avoid visual bleeding */
 html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none !important; }
