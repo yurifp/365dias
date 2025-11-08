@@ -83,10 +83,6 @@ body::after{
   background-size: 24px 24px, 24px 24px; opacity:.2;
 }
 
-/* Background particles canvas */
-#bgParticles{ position:fixed; inset:0; z-index:0; opacity:.25; }
-.webgl-starry{ position:fixed; inset:0; z-index:0; pointer-events:none; display:block; }
-
 /* Progress bar shell fixed bottom */
 .progress-shell{
   --p: 0%;
@@ -592,3 +588,107 @@ html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none 
 #widgets .widget-card[data-span="2x2"]{ grid-column: span 2; grid-row: span 2; }
 #widgets .widget-card[data-span="3x1"]{ grid-column: span 3; }
 #widgets .widget-card[data-span="1x3"]{ grid-row: span 3; }
+
+/* === Google Maps Widget === */
+.map-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  min-height: 300px;
+  max-width: min(980px, 100%);
+  margin: 24px auto 32px;
+  background: #f8fafc;
+  position: relative;
+  top: 55%;
+}
+
+.map-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+  background: #f8fafc;
+}
+
+/* Map loading placeholder */
+.map-placeholder {
+  width: 100%;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  color: #6b7280;
+}
+
+.map-loading {
+  text-align: center;
+  display: grid;
+  gap: 12px;
+  place-items: center;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.map-loading p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Mobile optimizations */
+@media (max-width: 430px) {
+  .map-wrap {
+    min-height: 240px;
+    margin: 16px auto 24px;
+    border-radius: 12px;
+  }
+  
+  .map-wrap iframe,
+  .map-placeholder {
+    min-height: 260px;
+  }
+}
+
+/* Tablet and desktop */
+@media (min-width: 768px) {
+  .map-wrap {
+    min-height: 400px;
+    margin: 32px auto 48px;
+    border-radius: 20px;
+  }
+  
+  .map-wrap iframe,
+  .map-placeholder {
+    min-height: 400px;
+  }
+}
+
+/* Light theme adjustments */
+.carousel-section.is-light .map-wrap {
+  background: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.carousel-section.is-light .map-placeholder {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.carousel-section.is-light .loading-spinner {
+  border-color: #f1f5f9;
+  border-top-color: #3b82f6;
+}

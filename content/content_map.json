@@ -1,6 +1,10 @@
 [
   { "title": "O pedido", "caption": "Flores, chocolate e um Outback cheio de gente — o dia em que tudo começou de verdade.", "image": "./assets/images/091124.png", "date": "09.11.2024",
-  
+    "hasMap": true,
+    "mapConfig": {
+      "url": "https://www.google.com/maps?q=-12.9785389,-38.4550888&z=18&output=embed",
+      "title": "Mapa - Outback Steakhouse Salvador Shopping"
+    },
     "stickers": [
   { "id": "sticker1", "img_src": "./assets/stickers/sticker1.svg", "css": { "top": "-4%", "left": "-2%", "width": "80px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
       { "img_src": "./assets/stickers/sticker2.svg", "css": { "bottom": "15%", "right": "10%", "width": "60px", "opacity": "0.8" } },
@@ -24,7 +28,12 @@
 },
 
   { "title": "Seu aniversário", "caption": "Vona, velas, massa e meu limãozinho — uma noite que estava mais pra filme italiano", "image": "./assets/images/231124.jpg", "date": "23.11.2024",
-   "stickers": [
+    "hasMap": true,
+    "mapConfig": {
+      "url": "https://www.google.com/maps?q=-12.9875,-38.4678&z=16&output=embed",
+      "title": "Mapa - Restaurante do aniversário"
+    },
+    "stickers": [
 
       { "img_src": "./assets/stickers/sticker15.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
      { "img_src": "./assets/stickers/sticker16.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } },
@@ -73,7 +82,7 @@
  
 
   { "title": "Airbnb do empreendedor", "caption": "Uma relaxadinha depois do trabalho presencial 🫣", "image": "./assets/images/140225.JPEG", "date": "14.02.2025" },
-  { "title": "El ranchito x Picanha Bloomin'Burguer", "caption": "‘nosso rolê padrão’, mas nunca é só mais um dia.", "image": "./assets/images/280225.JPEG", "date": "28/02/2025" }, 
+  { "title": "El ranchito x Picanha Bloomin'Burguer", "caption": "‘nosso rolê padrão’, mas nunca é só mais um dia.", "image": "./assets/images/280225.JPEG", "date": "28.02.2025" },
 
   { "title": "Minha Cerejinha", "caption": "Um pôr do sol calmo, muitos risadas e a sensação de que aquele seria um dos dias que eu sempre lembraria com carinho", "image": "./assets/images/g280325-3.png", "date": "15.03.2025",
     "stickers": [
@@ -85,7 +94,7 @@
       { "img_src": "./assets/stickers/ghi5.png", "css": { "bottom": "-606%", "right": "8%", "width": "329px", "opacity": "0.8" } }
     ]
   },
-  { "title": "MAHI MAHI", "caption": "Esse dia dia foi incrível, que eu vão ser duas fotos sim", "image": "./assets/images/150325.JPEG", "date": "15/03/2025",
+  { "title": "MAHI MAHI", "caption": "Esse dia dia foi incrível, que eu vão ser duas fotos sim", "image": "./assets/images/150325.JPEG", "date": "15.03.2025",
 
          "stickers": [
 
@@ -96,41 +105,47 @@
     ]
 
 },
-  { "title": "Oh muié bonita da gota serena", "caption": "A minha mulher é linda demais, cheirosa e gostosa", "image": "./assets/images/160325.JPEG", "date": "16/03/2025" },
+  { "title": "Oh muié bonita da gota serena", "caption": "A minha mulher é linda demais, cheirosa e gostosa", "image": "./assets/images/160325.JPEG", "date": "16.03.2025" },
 
-  { "title": "Van Gogh", "caption": "Van Gogh amou o amarelo porque não conheceu o castanho dos seus olhos, ele ficaria fascinado, assim como eu.", "image": "./assets/images/130425.JPEG", "date": "13/04/2025" },
-  { "title": "Amo essa foto :)", "caption": "Dia de sol, psicininha amor..", "image": "./assets/images/140425.JPEG", "date": "14/04/2025" },
-
-
-  { "title": "Meu aniversário", "caption": "Adorei os presentes, mas o verdadeiro presente é você comigo.", "image": "./assets/images/050525-2.JPEG", "date": "05/05/2025" },
-  { "title": "festinha de sophia", "caption": "A mini querida te adora", "image": "./assets/images/170525.JPEG", "date": "17/05/2025" },
-  { "title": "Vixxxxx, isso aqui foi uma BOMBA!!!", "caption": "KKKKKKKKKKKKKKKKK", "image": "./assets/images/240525.JPEG", "date": "24/05/2025" },
-  { "title": "Cineminha Lilo & Stitch", "caption": "Dia de cinama com a mini querida", "image": "./assets/images/310525-1.JPEG", "date": "31/05/2025" },
-
-  { "title": "Mellhor dia dos namorados💕", "caption": "Tenho certeza que você tem memorias molhadas incriveis aqui", "image": "./assets/images/120625-1.png", "date": "12/06/2025" },
-  { "title": "No nosso apê no Mandarim", "caption": "Tava um friooo, os ventos batendo as janelas e as plantas.", "image": "./assets/images/140625.JPEG", "date": "14/06/2025" },
-  { "title": "São Jué na roça", "caption": "Ela toda fofinha na skin roceira", "image": "./assets/images/230625.JPEG", "date": "23/06/2025" },
-  { "title": "?????", "caption": "Kkkkkkkkkkkkkk aqui eu não faço ideia do que aconteceu, mas a foto ficou engraçada", "image": "./assets/images/240625.JPEG", "date": "24/06/2025" },
-
-  { "title": "'Como treinar o meu Dragão'", "caption": "Salinha Vip, gostosuras e travessuras", "image": "./assets/images/050725.JPEG", "date": "05/07/2025" },
-  { "title": "Stardew Valley - Duo love", "caption": "Aqui eu era feliz, bom demais ficar na chamada com você jogando um pouquinho", "image": "./assets/images/060725.JPEG", "date": "06/07/2025" },
-  { "title": "Sushizinho", "caption": "Finalmente conseguimos ir no Yokoyama", "image": "./assets/images/240725-2.JPEG", "date": "24/07/2025" },
-  { "title": "Ta com frio né mô", "caption": "Indo testar pra ver se a psicina é aquecida", "image": "./assets/images/250725.JPEG", "date": "25/07/2025" },
-
-  { "title": "+1 Filminho", "caption": "Capitão America >>>>>>>> Reed Richards", "image": "./assets/images/090825.JPEG", "date": "09/08/2025" },
-  { "title": "Amo esse sorriso", "caption": "Essa é atualmente a minha foto favorita disparado", "image": "./assets/images/300825.JPEG", "date": "30/08/2025" },
+  { "title": "Van Gogh", "caption": "Van Gogh amou o amarelo porque não conheceu o castanho dos seus olhos, ele ficaria fascinado, assim como eu.", "image": "./assets/images/130425.JPEG", "date": "13.04.2025" },
+  { "title": "Amo essa foto :)", "caption": "Dia de sol, psicininha amor..", "image": "./assets/images/140425.JPEG", "date": "14.04.2025" },
 
 
-  { "title": "'Tô feliz pq a comida chegou'", "caption": "Mô que emoção", "image": "./assets/images/130925.JPEG", "date": "13/09/2025" },
-  { "title": "Festinha de Levi", "caption": "Passou tão rápido esse dia, queria ter curtido mais com você", "image": "./assets/images/140925.JPEG", "date": "14/09/2025" },
-  { "title": "🩵🍋", "caption": "Essa é a minha POV vendo meu neném", "image": "./assets/images/220925.JPEG", "date": "22/09/2025" },
+  { "title": "Meu aniversário", "caption": "Adorei os presentes, mas o verdadeiro presente é você comigo.", "image": "./assets/images/050525-2.JPEG", "date": "05.05.2025" },
+  { "title": "festinha de sophia", "caption": "A mini querida te adora", "image": "./assets/images/170525.JPEG", "date": "17.05.2025" },
+  { "title": "Vixxxxx, isso aqui foi uma BOMBA!!!", "caption": "KKKKKKKKKKKKKKKKK", "image": "./assets/images/240525.JPEG", "date": "24.05.2025" },
+  { "title": "Cineminha Lilo & Stitch", "caption": "Dia de cinama com a mini querida", "image": "./assets/images/310525-1.JPEG", "date": "31.05.2025" },
+
+  { "title": "Mellhor dia dos namorados💕", "caption": "Tenho certeza que você tem memorias molhadas incriveis aqui", "image": "./assets/images/120625-1.png", "date": "12.06.2025",
+    "hasMap": true,
+    "mapConfig": {
+      "url": "https://www.google.com/maps?q=-13.0043,-38.4712&z=17&output=embed",
+      "title": "Mapa - Local do dia dos namorados"
+    }
+  },
+  { "title": "No nosso apê no Mandarim", "caption": "Tava um friooo, os ventos batendo as janelas e as plantas.", "image": "./assets/images/140625.JPEG", "date": "14.06.2025" },
+  { "title": "São Jué na roça", "caption": "Ela toda fofinha na skin roceira", "image": "./assets/images/230625.JPEG", "date": "23.06.2025" },
+  { "title": "?????", "caption": "Kkkkkkkkkkkkkk aqui eu não faço ideia do que aconteceu, mas a foto ficou engraçada", "image": "./assets/images/240625.JPEG", "date": "24.06.2025" },
+
+  { "title": "'Como treinar o meu Dragão'", "caption": "Salinha Vip, gostosuras e travessuras", "image": "./assets/images/050725.JPEG", "date": "05.07.2025" },
+  { "title": "Stardew Valley - Duo love", "caption": "Aqui eu era feliz, bom demais ficar na chamada com você jogando um pouquinho", "image": "./assets/images/060725.JPEG", "date": "06.07.2025" },
+  { "title": "Sushizinho", "caption": "Finalmente conseguimos ir no Yokoyama", "image": "./assets/images/240725-2.JPEG", "date": "24.07.2025" },
+  { "title": "Ta com frio né mô", "caption": "Indo testar pra ver se a psicina é aquecida", "image": "./assets/images/250725.JPEG", "date": "25.07.2025" },
+
+  { "title": "+1 Filminho", "caption": "Capitão America >>>>>>>> Reed Richards", "image": "./assets/images/090825.JPEG", "date": "09.08.2025" },
+  { "title": "Amo esse sorriso", "caption": "Essa é atualmente a minha foto favorita disparado", "image": "./assets/images/300825.JPEG", "date": "30.08.2025" },
+
+
+  { "title": "'Tô feliz pq a comida chegou'", "caption": "Mô que emoção", "image": "./assets/images/130925.JPEG", "date": "13.09.2025" },
+  { "title": "Festinha de Levi", "caption": "Passou tão rápido esse dia, queria ter curtido mais com você", "image": "./assets/images/140925.JPEG", "date": "14.09.2025" },
+  { "title": "🩵🍋", "caption": "Essa é a minha POV vendo meu neném", "image": "./assets/images/220925.JPEG", "date": "22.09.2025" },
   
 
-  { "title": "hum delicia — Parte 1/4", "caption": "Essa foto te lembrou algo? ", "image": "./assets/images/101025.JPEG", "date": "10/10/2025" },
-  { "title": "Eu gosto desse vestido", "caption": "A gente tava fofinho nesse dia", "image": "./assets/images/251025.JPEG", "date": "25/10/2025" },
+  { "title": "hum delicia — Parte 1/4", "caption": "Essa foto te lembrou algo? ", "image": "./assets/images/101025.JPEG", "date": "10.10.2025" },
+  { "title": "Eu gosto desse vestido", "caption": "A gente tava fofinho nesse dia", "image": "./assets/images/251025.JPEG", "date": "25.10.2025" },
 
 
-  { "title": "Madre UHU day1", "caption": "Legenda da parte 1/4", "image": "./assets/images/081125.png", "date": "08/11/2025" },
-  { "title": "Madre UHU day2", "caption": "Legenda da parte 2/4", "image": "./assets/images/091125.png", "date": "09/11/2025" },
-  { "title": "HP4", "caption": "Isso seria a gente no dia 15/11 >.<", "image": "./assets/images/151125.png", "date": "15/11/2025" }
+  { "title": "Madre UHU day1", "caption": "Legenda da parte 1/4", "image": "./assets/images/081125.png", "date": "08.11.2025" },
+  { "title": "Madre UHU day2", "caption": "Legenda da parte 2/4", "image": "./assets/images/091125.png", "date": "09.11.2025" },
+  { "title": "HP4", "caption": "Isso seria a gente no dia 15.11 >.<", "image": "./assets/images/151125.png", "date": "15.11.2025" }
 ]

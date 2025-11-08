@@ -4,6 +4,7 @@ import { runStickerAction, registerDefaultStickerActions } from './sticker_actio
 import './sticker_custom.js';
 import { initDateChip, setDateMap, setDefaultDay } from './date_chip.js';
 import { renderCards } from './cards.js';
+import { initMapWidget, renderMapWidget, shouldRenderMap } from './mapWidget.js';
 
 async function loadContent(){
   try{
@@ -17,9 +18,11 @@ async function loadContent(){
       date: v.date || '',
       image: v.image || '',
       cards: Array.isArray(v.cards) ? v.cards : [],
-  widgets: v.widgets || null,
-  cover: v.cover || null,
+      widgets: v.widgets || null,
+      cover: v.cover || null,
       stickers: Array.isArray(v.stickers) ? v.stickers : null,
+      hasMap: v.hasMap === true || v.showMap === true,
+      mapConfig: v.mapConfig || null,
     }));
   }catch(err){
     console.warn('Falha ao carregar content_map.json. Usando demo.', err);
@@ -66,6 +69,10 @@ function updateExternalContent(slide){
 async function init(){
   // Register a small set of built-in actions; you can add more in sticker_actions.js
   registerDefaultStickerActions();
+  
+  // Initialize map widget system
+  initMapWidget();
+  
   const slides = await loadContent();
   // Optionally merge external cards map by id
   const cardsMap = await loadCardsMap();
@@ -100,8 +107,8 @@ async function init(){
     mount: '#polaroidCarousel',
     slides,
     onChange: (idx, slide) => {
-  // drive date chip relative to current number of slides
-  chipDriver.set((idx)/Math.max(1, slides.length));
+      // drive date chip relative to current number of slides
+      chipDriver.set((idx)/Math.max(1, slides.length));
       // animate external content cross-fade
       const els = ['carouselTitle','carouselDesc','carouselDate'].map(id=>document.getElementById(id)).filter(Boolean);
       if (window.anime && els.length){
@@ -118,8 +125,32 @@ async function init(){
       } else {
         renderCards('#cardsGrid', []);
       }
-  // widgets/cover removidos
-  updateStickers(slide);
+      
+      // Render map widget if needed (renderMapWidget already handles cleanup)
+      const carouselSection = document.querySelector('.carousel-section');
+      if (shouldRenderMap(slide) && carouselSection) {
+        renderMapWidget(slide, carouselSection);
+      } else if (carouselSection) {
+        // Remove map widgets if slide doesn't need one
+        const existingMaps = carouselSection.querySelectorAll('.map-wrap');
+        existingMaps.forEach(map => {
+          if (window.anime) {
+            anime({
+              targets: map,
+              opacity: [1, 0],
+              translateY: [0, 20],
+              duration: 400,
+              easing: 'easeInQuart',
+              complete: () => map.remove()
+            });
+          } else {
+            map.remove();
+          }
+        });
+      }
+      
+      // widgets/cover removidos
+      updateStickers(slide);
     }
   });
   // Expor controle simples para ações como navigate-slide
@@ -144,6 +175,13 @@ async function init(){
   if (slides[0] && Array.isArray(slides[0].cards)){
     renderCards('#cardsGrid', slides[0].cards);
   }
+  
+  // Initial map widget
+  const carouselSection = document.querySelector('.carousel-section');
+  if (shouldRenderMap(slides[0]) && carouselSection) {
+    renderMapWidget(slides[0], carouselSection);
+  }
+  
   // widgets/cover removidos
   updateStickers(slides[0]);
 
