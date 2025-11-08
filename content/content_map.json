@@ -28,7 +28,9 @@
       { "img_src": "./assets/stickers/sticker.svg", "css": { "top": "-13%", "left": "3%", "width": "147px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
       { "img_src": "./assets/stickers/sticker.svg", "css": { "bottom": "-34%", "right": "6%", "width": "78px", "opacity": "0.8", "transform": "rotate(-26deg)" } },
       { "img_src": "./assets/stickers/sticker15.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/stickers/sticker16.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+     { "img_src": "./assets/stickers/sticker16.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker17.svg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/stickers/sticker18.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } }
     ]
 },
   
