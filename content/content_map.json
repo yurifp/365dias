@@ -104,19 +104,62 @@
    ]
 },
 
-  { "title": "Yakisoba e Gelato", "caption": "Nosso yakisoba favorito, nosso gelato favorito e minha pessoa favorita..", "image": "./assets/images/040125.jpg", "date": "04.01.2025" },
+  { "title": "Yakisoba e Gelato", "caption": "Nosso yakisoba favorito, nosso gelato favorito e minha pessoa favorita..", "image": "./assets/images/040125.jpg", "date": "04.01.2025",
+
+  
+  "stickers": [
+    { "img_src": "./assets/images/040125-1.jpg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/040125-2.jpg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/040125-3.jpg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/040125-4.jpg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
 
   { "title": "Zé Lambidas", "caption": "Vulgo bolota", "image": "./assets/images/120125.JPEG", "date": "12.01.2025",
-    "cover": { "title": "Capa da Jan 2/4", "subtitle": "Mensagem especial desta foto" },
-    "stickers": [
-      { "img_src": "./assets/stickers/pipoca.png", "css": { "top": "50%", "left": "50%", "width": "100px", "transform": "translate(-50%, -50%)" } }
-    ]
+
+  "stickers": [
+    { "img_src": "./assets/images/120125-1.jpg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/120125-2.jpg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120125-3.jpg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120125-4.jpg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
   },
-  { "title": "Coisas Gostosas", "caption": "Como você pode ver, essas duas coisas mais gostosas que eu gosto de comer", "image": "./assets/images/250125.jpg", "date": "25.01.2025" },
+  { "title": "Coisas Gostosas", "caption": "Como você pode ver, essas duas coisas mais gostosas que eu gosto de comer", "image": "./assets/images/250125.jpg", "date": "25.01.2025"
+
+  ,  "stickers": [
+    { "img_src": "./assets/images/250125-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/250125-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/250125-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/250125-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
  
 
-  { "title": "Airbnb do empreendedor", "caption": "Uma relaxadinha depois do trabalho presencial 🫣", "image": "./assets/images/140225.JPEG", "date": "14.02.2025" },
-  { "title": "El ranchito x Picanha Bloomin'Burguer", "caption": "‘nosso rolê padrão’, mas nunca é só mais um dia.", "image": "./assets/images/280225.JPEG", "date": "28.02.2025" },
+  { "title": "Airbnb do empreendedor", "caption": "Uma relaxadinha depois do trabalho presencial 🫣", "image": "./assets/images/140225.JPEG", "date": "14.02.2025"
+
+   , "stickers": [
+    { "img_src": "./assets/images/140225-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/140225-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140225-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140225-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "El ranchito x Picanha Bloomin'Burguer", "caption": "‘nosso rolê padrão’, mas nunca é só mais um dia.", "image": "./assets/images/280225.JPEG", "date": "28.02.2025"
+
+   , "stickers": [
+    { "img_src": "./assets/images/280225-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/280225-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/280225-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/280225-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+},
 
   { "title": "Minha Cerejinha", "caption": "Um pôr do sol calmo, muitos risadas e a sensação de que aquele seria um dos dias que eu sempre lembraria com carinho", "image": "./assets/images/g280325-3.png", "date": "15.03.2025",
     "stickers": [
@@ -139,49 +182,254 @@
     ]
 
 },
-  { "title": "Oh muié bonita da gota serena", "caption": "A minha mulher é linda demais, cheirosa e gostosa", "image": "./assets/images/160325.JPEG", "date": "16.03.2025" },
+  { "title": "Oh muié bonita da gota serena", "caption": "A minha mulher é linda demais, cheirosa e gostosa", "image": "./assets/images/160325.JPEG", "date": "16.03.2025"
 
-  { "title": "Van Gogh", "caption": "Van Gogh amou o amarelo porque não conheceu o castanho dos seus olhos, ele ficaria fascinado, assim como eu.", "image": "./assets/images/130425.JPEG", "date": "13.04.2025" },
-  { "title": "Amo essa foto :)", "caption": "Dia de sol, psicininha amor..", "image": "./assets/images/140425.JPEG", "date": "14.04.2025" },
+   , "stickers": [
+    { "img_src": "./assets/images/160325-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/160325-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/160325-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/160325-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
 
 
-  { "title": "Meu aniversário", "caption": "Adorei os presentes, mas o verdadeiro presente é você comigo.", "image": "./assets/images/050525-2.JPEG", "date": "05.05.2025" },
-  { "title": "festinha de sophia", "caption": "A mini querida te adora", "image": "./assets/images/170525.JPEG", "date": "17.05.2025" },
-  { "title": "Vixxxxx, isso aqui foi uma BOMBA!!!", "caption": "KKKKKKKKKKKKKKKKK", "image": "./assets/images/240525.JPEG", "date": "24.05.2025" },
-  { "title": "Cineminha Lilo & Stitch", "caption": "Dia de cinama com a mini querida", "image": "./assets/images/310525-1.JPEG", "date": "31.05.2025" },
+},
+
+  { "title": "Van Gogh", "caption": "Van Gogh amou o amarelo porque não conheceu o castanho dos seus olhos, ele ficaria fascinado, assim como eu.", "image": "./assets/images/130425.JPEG", "date": "13.04.2025"
+
+     , "stickers": [
+    { "img_src": "./assets/images/130425-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/130425-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/130425-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/130425-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+},
+  { "title": "Amo essa foto :)", "caption": "Dia de sol, psicininha amor..", "image": "./assets/images/140425.JPEG", "date": "14.04.2025"
+
+       , "stickers": [
+    { "img_src": "./assets/images/140425-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/140425-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140425-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140425-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+
+
+  { "title": "Meu aniversário", "caption": "Adorei os presentes, mas o verdadeiro presente é você comigo.", "image": "./assets/images/050525-2.JPEG", "date": "05.05.2025"
+
+         , "stickers": [
+    { "img_src": "./assets/images/050525-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/050525-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/050525-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/050525-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+},
+  { "title": "festinha de sophia", "caption": "A mini querida te adora", "image": "./assets/images/170525.JPEG", "date": "17.05.2025"
+
+           , "stickers": [
+    { "img_src": "./assets/images/170525-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/170525-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/170525-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/170525-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+},
+  { "title": "Vixxxxx, isso aqui foi uma BOMBA!!!", "caption": "KKKKKKKKKKKKKKKKK", "image": "./assets/images/240525.JPEG", "date": "24.05.2025"
+
+             , "stickers": [
+    { "img_src": "./assets/images/240525-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/240525-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/240525-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/240525-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "Cineminha Lilo & Stitch", "caption": "Dia de cinama com a mini querida", "image": "./assets/images/310525-1.JPEG", "date": "31.05.2025"
+
+               , "stickers": [
+    { "img_src": "./assets/images/310525-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/310525-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/310525-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/310525-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
 
   { "title": "Mellhor dia dos namorados💕", "caption": "Tenho certeza que você tem memorias molhadas incriveis aqui", "image": "./assets/images/120625-1.png", "date": "12.06.2025",
-    "hasMap": true,
-    "mapConfig": {
-      "url": "https://www.google.com/maps?q=-13.0043,-38.4712&z=17&output=embed",
-      "title": "Mapa - Local do dia dos namorados"
-    },
-    "hasMusic": true,
-    "musicConfig": {
-      "src": "https://open.spotify.com/embed/track/1dne6HxFE2LL5pM5bXaZd4?utm_source=generator",
-      "title": "Trilha sonora romântica do nosso dia dos namorados"
-    }
+
+           "stickers": [
+    { "img_src": "./assets/images/120625-1.png", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/120625-2.png", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120625-3.png", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120625-4.png", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
   },
-  { "title": "No nosso apê no Mandarim", "caption": "Tava um friooo, os ventos batendo as janelas e as plantas.", "image": "./assets/images/140625.JPEG", "date": "14.06.2025" },
-  { "title": "São Jué na roça", "caption": "Ela toda fofinha na skin roceira", "image": "./assets/images/230625.JPEG", "date": "23.06.2025" },
-  { "title": "?????", "caption": "Kkkkkkkkkkkkkk aqui eu não faço ideia do que aconteceu, mas a foto ficou engraçada", "image": "./assets/images/240625.JPEG", "date": "24.06.2025" },
+  { "title": "No nosso apê no Mandarim", "caption": "Tava um friooo, os ventos batendo as janelas e as plantas.", "image": "./assets/images/140625.JPEG", "date": "14.06.2025"
 
-  { "title": "'Como treinar o meu Dragão'", "caption": "Salinha Vip, gostosuras e travessuras", "image": "./assets/images/050725.JPEG", "date": "05.07.2025" },
-  { "title": "Stardew Valley - Duo love", "caption": "Aqui eu era feliz, bom demais ficar na chamada com você jogando um pouquinho", "image": "./assets/images/060725.JPEG", "date": "06.07.2025" },
-  { "title": "Sushizinho", "caption": "Finalmente conseguimos ir no Yokoyama", "image": "./assets/images/240725-2.JPEG", "date": "24.07.2025" },
-  { "title": "Ta com frio né mô", "caption": "Indo testar pra ver se a psicina é aquecida", "image": "./assets/images/250725.JPEG", "date": "25.07.2025" },
-
-  { "title": "+1 Filminho", "caption": "Capitão America >>>>>>>> Reed Richards", "image": "./assets/images/090825.JPEG", "date": "09.08.2025" },
-  { "title": "Amo esse sorriso", "caption": "Essa é atualmente a minha foto favorita disparado", "image": "./assets/images/300825.JPEG", "date": "30.08.2025" },
+     , "stickers": [
+    { "img_src": "./assets/images/140625-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/140625-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140625-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140625-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
 
 
-  { "title": "'Tô feliz pq a comida chegou'", "caption": "Mô que emoção", "image": "./assets/images/130925.JPEG", "date": "13.09.2025" },
-  { "title": "Festinha de Levi", "caption": "Passou tão rápido esse dia, queria ter curtido mais com você", "image": "./assets/images/140925.JPEG", "date": "14.09.2025" },
-  { "title": "🩵🍋", "caption": "Essa é a minha POV vendo meu neném", "image": "./assets/images/220925.JPEG", "date": "22.09.2025" },
+},
+  { "title": "São Jué na roça", "caption": "Ela toda fofinha na skin roceira", "image": "./assets/images/230625.JPEG", "date": "23.06.2025"
+
+               , "stickers": [
+    { "img_src": "./assets/images/230625-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/230625-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/230625-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/230625-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "?????", "caption": "Kkkkkkkkkkkkkk aqui eu não faço ideia do que aconteceu, mas a foto ficou engraçada", "image": "./assets/images/240625.JPEG", "date": "24.06.2025"
+
+                 , "stickers": [
+    { "img_src": "./assets/images/240625-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/240625-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/240625-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/240625-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+
+  { "title": "'Como treinar o meu Dragão'", "caption": "Salinha Vip, gostosuras e travessuras", "image": "./assets/images/050725.JPEG", "date": "05.07.2025"
+
+                   , "stickers": [
+    { "img_src": "./assets/images/050725-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/050725-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/050725-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/050725-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+},
+  { "title": "Stardew Valley - Duo love", "caption": "Aqui eu era feliz, bom demais ficar na chamada com você jogando um pouquinho", "image": "./assets/images/060725.JPEG", "date": "06.07.2025"
+
+                       , "stickers": [
+    { "img_src": "./assets/images/060725-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/060725-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/060725-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/060725-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "Sushizinho", "caption": "Finalmente conseguimos ir no Yokoyama", "image": "./assets/images/240725-2.JPEG", "date": "24.07.2025"
+
+                           , "stickers": [
+    { "img_src": "./assets/images/240725-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/240725-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/240725-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/240725-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "Ta com frio né mô", "caption": "Indo testar pra ver se a psicina é aquecida", "image": "./assets/images/250725.JPEG", "date": "25.07.2025"
+
+       , "stickers": [
+    { "img_src": "./assets/images/250725-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/250725-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/250725-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/250725-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+},
+
+  { "title": "+1 Filminho", "caption": "Capitão America >>>>>>>> Reed Richards", "image": "./assets/images/090825.JPEG", "date": "09.08.2025"
+
+           , "stickers": [
+    { "img_src": "./assets/images/090825-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/090825-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/090825-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/090825-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "Amo esse sorriso", "caption": "Essa é atualmente a minha foto favorita disparado", "image": "./assets/images/300825.JPEG", "date": "30.08.2025"
+
+             , "stickers": [
+    { "img_src": "./assets/images/300825-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/300825-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/300825-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/300825-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+
+},
+
+
+  { "title": "'Tô feliz pq a comida chegou'", "caption": "Mô que emoção", "image": "./assets/images/130925.JPEG", "date": "13.09.2025"
+
+             , "stickers": [
+    { "img_src": "./assets/images/130925-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/130925-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/130925-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/130925-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "Festinha de Levi", "caption": "Passou tão rápido esse dia, queria ter curtido mais com você", "image": "./assets/images/140925.JPEG", "date": "14.09.2025"
+
+               , "stickers": [
+    { "img_src": "./assets/images/140925-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/140925-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140925-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140925-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
+  { "title": "🩵🍋", "caption": "Essa é a minha POV vendo meu neném", "image": "./assets/images/220925.JPEG", "date": "22.09.2025"
+
+                   , "stickers": [
+    { "img_src": "./assets/images/220925-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/220925-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/220925-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/220925-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+
+},
   
 
-  { "title": "hum delicia — Parte 1/4", "caption": "Essa foto te lembrou algo? ", "image": "./assets/images/101025.JPEG", "date": "10.10.2025" },
-  { "title": "Eu gosto desse vestido", "caption": "A gente tava fofinho nesse dia", "image": "./assets/images/251025.JPEG", "date": "25.10.2025" },
+  { "title": "hum delicia — Parte 1/4", "caption": "Essa foto te lembrou algo? ", "image": "./assets/images/101025.JPEG", "date": "10.10.2025"
+
+                   , "stickers": [
+    { "img_src": "./assets/images/101025-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/101025-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/101025-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/101025-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+},
+  { "title": "Eu gosto desse vestido", "caption": "A gente tava fofinho nesse dia", "image": "./assets/images/251025.JPEG", "date": "25.10.2025"
+
+
+                     , "stickers": [
+    { "img_src": "./assets/images/251025-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/251025-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/251025-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/251025-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+
+
+},
 
 
   { "title": "Madre UHU day1", "caption": "Legenda da parte 1/4", "image": "./assets/images/081125.png", "date": "08.11.2025" },
