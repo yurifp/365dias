@@ -6,6 +6,7 @@ import { initDateChip, setDateMap, setDefaultDay } from './date_chip.js';
 import { renderCards } from './cards.js';
 import { initMapWidget, renderMapWidget, shouldRenderMap } from './mapWidget.js';
 import { initMusicWidget, renderMusicWidget, shouldRenderMusic } from './musicWidget.js';
+import { initCameraWidget, setupCameraStickers, destroyCameraWidgets } from './cameraWidget.js';
 
 async function loadContent(){
   try{
@@ -79,6 +80,9 @@ async function init(){
   
   // Initialize music widget system
   initMusicWidget();
+  
+  // Initialize camera widget system
+  initCameraWidget();
   
   const slides = await loadContent();
   // Optionally merge external cards map by id
@@ -178,8 +182,10 @@ async function init(){
         });
       }
       
-      // widgets/cover removidos
-      updateStickers(slide);
+  // widgets/cover removidos
+  // Ensure camera wrappers from previous slide are cleaned up
+  try { destroyCameraWidgets(); } catch {}
+  updateStickers(slide);
     }
   });
   // Expor controle simples para ações como navigate-slide
@@ -217,6 +223,7 @@ async function init(){
   }
   
   // widgets/cover removidos
+  try { destroyCameraWidgets(); } catch {}
   updateStickers(slides[0]);
 
   // Seed any static sticker slots declared in HTML (optional)
@@ -270,6 +277,11 @@ function updateStickers(slide){
     }
     mount.appendChild(img);
   });
+  
+  // Setup camera effects for sticker12.svg after stickers are rendered
+  setTimeout(() => {
+    setupCameraStickers();
+  }, 100);
 }
 
 // Optional helper: if a sticker-slot has data-src, build an <img> inside it

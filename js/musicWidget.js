@@ -19,6 +19,22 @@ export function initMusicWidget() {
       threshold: 0.1
     });
   }
+
+  // Hint the browser to establish early connections for Spotify
+  try {
+    const head = document.head || document.getElementsByTagName('head')[0];
+    const ensurePreconnect = (href) => {
+      if (!head.querySelector(`link[rel="preconnect"][href="${href}"]`)) {
+        const l = document.createElement('link');
+        l.rel = 'preconnect';
+        l.href = href;
+        l.crossOrigin = '';
+        head.appendChild(l);
+      }
+    };
+    ensurePreconnect('https://open.spotify.com');
+    ensurePreconnect('https://i.scdn.co');
+  } catch {}
 }
 
 export function renderMusicWidget(slide, container) {
@@ -45,22 +61,8 @@ export function renderMusicWidget(slide, container) {
     return;
   }
 
-  // Create placeholder for lazy loading
-  const placeholder = document.createElement('div');
-  placeholder.className = 'music-placeholder';
-  placeholder.innerHTML = `
-    <div class="music-loading">
-      <div class="loading-spinner"></div>
-      <div class="spotify-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 14.424c-.175.289-.551.38-.84.205-2.3-1.405-5.195-1.725-8.605-.945-.328.075-.66-.132-.735-.46s.132-.66.46-.735c3.738-.855 6.965-.495 9.555 1.095.289.175.38.551.205.84zm1.2-2.67c-.22.36-.69.475-1.05.255-2.63-1.62-6.64-2.085-9.755-1.14-.39.12-.8-.105-.92-.495s.105-.8.495-.92c3.56-1.08 8.005-.56 11.005 1.25.36.22.475.69.255 1.05zm.105-2.78C15.24 9.4 8.87 9.17 5.16 10.42c-.46.155-.95-.095-1.105-.555s.095-.95.555-1.105c4.27-1.43 11.295-1.155 15.545 1.335.42.245.56.785.315 1.205s-.785.56-1.205.315z" fill="#1DB954"/>
-        </svg>
-      </div>
-      <p>Carregando música do Spotify...</p>
-    </div>
-  `;
-  
-  musicWrap.appendChild(placeholder);
+  // Keep wrapper hidden until iframe is ready to avoid overlay during loading
+  musicWrap.classList.add('is-hidden');
   musicWrap.dataset.musicSrc = musicSrc;
   musicWrap.dataset.musicTitle = musicTitle;
 
@@ -83,21 +85,16 @@ export function renderMusicWidget(slide, container) {
     container.appendChild(musicWrap);
   }
 
-  // Set up lazy loading
-  if (musicObserver) {
-    musicObserver.observe(musicWrap);
-  } else {
-    // Fallback: load immediately if no observer support
-    setTimeout(() => loadMusicIframe(musicWrap), 500);
-  }
+  // Load immediately to avoid long placeholder time
+  loadMusicIframe(musicWrap);
 
   // Animate entrance
   animateMusicEntrance(musicWrap);
 }
 
 function loadMusicIframe(musicWrap) {
-  const placeholder = musicWrap.querySelector('.music-placeholder');
-  if (!placeholder) return;
+  // Clean any previous children (no visible placeholder)
+  musicWrap.innerHTML = '';
 
   const musicSrc = musicWrap.dataset.musicSrc;
   const musicTitle = musicWrap.dataset.musicTitle;
@@ -110,12 +107,21 @@ function loadMusicIframe(musicWrap) {
   iframe.height = '352';
   iframe.frameBorder = '0';
   iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture');
-  iframe.setAttribute('loading', 'lazy');
+  // Prefer eager loading for faster paint
+  iframe.setAttribute('loading', 'eager');
   iframe.title = musicTitle;
 
-  // Replace placeholder with iframe
-  musicWrap.removeChild(placeholder);
+  // Insert iframe and reveal only when it's ready (or after a short timeout)
   musicWrap.appendChild(iframe);
+
+  const reveal = () => {
+    musicWrap.classList.remove('is-hidden');
+  };
+
+  let revealed = false;
+  iframe.addEventListener('load', () => { if (!revealed){ revealed = true; reveal(); }});
+  // Safety reveal in case load event is delayed
+  setTimeout(() => { if (!revealed){ revealed = true; reveal(); } }, 600);
 
   // Animate iframe load
   if (window.anime) {
@@ -126,7 +132,6 @@ function loadMusicIframe(musicWrap) {
       scale: [0.95, 1],
       easing: 'easeOutQuart',
       duration: 800,
-      delay: 150
     });
   }
 }

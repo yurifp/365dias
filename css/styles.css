@@ -614,7 +614,7 @@ html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none 
   margin: 24px auto 32px;
   background: #f8fafc;
   position: relative;
-  top: 68%;
+  top: 72%;
 }
 
 .map-wrap iframe {
@@ -726,6 +726,12 @@ html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none 
   top: 19%;
 }
 
+/* Hide wrapper while iframe is preparing to avoid covering stickers */
+.music-wrap.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
+
 .music-wrap iframe {
   display: block;
   width: 100%;
@@ -822,4 +828,122 @@ html.intro-active .slide-sticker, html.intro-active .sticker-slot{ display:none 
 
 .carousel-section.is-light .music-loading p {
   color: #334155;
+}
+
+/* === Camera Widget Styles === */
+.camera-wrap {
+  position: absolute;
+  /* no fixed width — preserve original sticker size */
+  height: auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.camera-sticker {
+  /* don't override inline width from JSON */
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+  transform-origin: center center;
+}
+
+.camera-sticker:hover {
+  transform: scale(1.05);
+}
+
+.camera-sticker:active {
+  transform: scale(0.95);
+}
+
+.photo-output {
+  position: absolute;
+  top: 100%;
+  width: 120px;
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+/* Camera sticker12 explicit sizing when useCssSize flag enabled */
+.camera-wrap.css-sized[data-sticker-src*="sticker12.svg"] .photo-output {
+  width: 330px !important;
+  height: 513px !important;
+}
+
+/* Label for camera interaction hint */
+.camera-wrap.css-sized[data-sticker-src*="sticker12.svg"]::before {
+  content: "clique aqui";
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  font: 600 12px/1 Inter, system-ui, sans-serif;
+  padding: 6px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+  letter-spacing: .5px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.printed-photo {
+  position: relative;
+  width: 100%;
+  transform: translateY(-100%);
+  opacity: 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  background: white;
+  padding: 8px;
+  padding-bottom: 24px;
+}
+
+/* Flash effect */
+.camera-flash-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999999;
+}
+
+/* Mobile optimizations */
+@media (max-width: 430px) {
+  .photo-output {
+    width: 327px;
+    height: 536px;
+  }
+  
+  .printed-photo {
+    padding: 6px;
+    padding-bottom: 18px;
+    border-radius: 6px;
+  }
+}
+
+/* Tablet and desktop */
+@media (min-width: 768px) {
+  .photo-output {
+    width: 327px;
+    height: 220px;
+  }
+  
+  .printed-photo {
+    padding: 10px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+  }
 }

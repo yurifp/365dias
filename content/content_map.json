@@ -16,17 +16,31 @@
       { "img_src": "./assets/stickers/sticker3.svg", "css": { "bottom": "10%", "right": "5%", "width": "60px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker4.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
       { "img_src": "./assets/stickers/sticker5.svg", "css": { "top": "227%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-       { "img_src": "./assets/stickers/sticker6.svg", "css": { "top": "413%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-       { "img_src": "./assets/stickers/sticker7.svg", "css": { "top": "511%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+       { "img_src": "./assets/stickers/sticker6.svg", "css": { "top": "453%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+       { "img_src": "./assets/stickers/sticker7.svg", "css": { "top": "551%", "right": "8%", "width": "329px", "opacity": "0.8" } },
         
-       { "img_src": "./assets/stickers/sticker8.svg", "css": { "top": "511%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+       { "img_src": "./assets/stickers/sticker8.svg", "css": { "top": "551%", "right": "8%", "width": "329px", "opacity": "0.9" } }
     ]
 },
   { "title": "Cineminha", "caption": "Eu nem lembro qual era o filme, só sei que foi um dia bom com você ao meu lado <3", "image": "./assets/images/161124.jpg", "date": "16.11.2024",
-"stickers": [
+    "hasMap": true,
+    "mapConfig": {
+      "url": "https://www.google.com/maps?q=-12.9781514,-38.4552146&z=17&output=embed",
+      "title": "Mapa - Cinemark Salvador Shopping"
+    },
+    "hasCamera": true,
+    "cameraConfig": {
+      "photoSrc": "./assets/images/cine4.svg",
+      "title": "Foto instantânea do cinema"
+    },
+
+
+  "stickers": [
       { "img_src": "./assets/stickers/sticker9.svg", "css": { "top": "-13%", "left": "3%", "width": "147px", "transform": "rotate(-15deg)" }, "action": { "name": "call", "args": { "fn": "sticker1" } } },
       { "img_src": "./assets/stickers/sticker10.svg", "css": { "bottom": "-34%", "right": "6%", "width": "78px", "opacity": "0.8", "transform": "rotate(-26deg)" } },
-      { "img_src": "./assets/stickers/sticker11.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+            { "img_src": "./assets/stickers/seta.svg", "css": { "bottom": "-203%", "right": "83%", "width": "50px", "opacity": "1", "transform": "rotate(49deg)", "z-index": "100001" } },
+    { "img_src": "./assets/stickers/sticker11.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+  { "img_src": "./assets/stickers/sticker12.svg", "css": { "bottom": "-226%", "left": "50%", "transform": "translateX(-50%)", "width": "330px", "opacity": "0.9" }, "action": { "name": "camera-effect", "args": { "photoSrc": "./assets/images/cine4.svg", "photoFactor": 0.85 } } }
 
     ]
 
@@ -40,10 +54,10 @@
     },
     "stickers": [
 
-      { "img_src": "./assets/stickers/sticker15.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/stickers/sticker16.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/stickers/sticker17.svg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/stickers/sticker18.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+  { "img_src": "./assets/stickers/sticker15.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+  { "img_src": "./assets/stickers/sticker16.svg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+    { "img_src": "./assets/stickers/sticker17.svg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+      { "img_src": "./assets/stickers/sticker18.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } }
     ]
 },
   
@@ -72,8 +86,23 @@
 
 
 },
-  { "title": "Natal com sabor de limão", "caption": "você me deu um Limoncello e outros milhares de motivos pra sorrir", "image": "./assets/images/231224.jpg", "date": "23.12.2024" },
-  { "title": "MAMMA JAMMA", "caption": "Será que a gente gosta da culinária italiana?", "image": "./assets/images/281224.jpg", "date": "28.12.2024" },
+  { "title": "Natal com sabor de limão", "caption": "você me deu um Limoncello e outros milhares de motivos pra sorrir", "image": "./assets/images/231224.jpg", "date": "23.12.2024",
+
+       "stickers": [
+
+     { "img_src": "./assets/images/231224-1.jpg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/231224-2.jpg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+   ]
+},
+  { "title": "MAMMA JAMMA", "caption": "Será que a gente gosta da culinária italiana?", "image": "./assets/images/281224.jpg", "date": "28.12.2024" ,       
+  
+  "stickers": [
+    { "img_src": "./assets/stickers/sticker40.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/281224-2.jpg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/281224-3.jpg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/281224-4.jpg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+   ]
+},
 
   { "title": "Yakisoba e Gelato", "caption": "Nosso yakisoba favorito, nosso gelato favorito e minha pessoa favorita..", "image": "./assets/images/040125.jpg", "date": "04.01.2025" },
 

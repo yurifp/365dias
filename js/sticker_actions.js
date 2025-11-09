@@ -156,6 +156,27 @@ export function registerDefaultStickerActions(){
     }
   });
 
+  // === camera-effect (simula câmera instantânea) ===
+  registerStickerAction('camera-effect', ({ element, args }) => {
+    if (!element) return;
+    
+    // Import camera widget dynamically
+    import('./cameraWidget.js').then(({ createCameraEffect }) => {
+      // Repassa todos os argumentos relevantes (antes só enviava photoSrc)
+      const config = {
+        photoSrc: args?.photoSrc || './assets/images/cine4.svg',
+        photoFactor: args?.photoFactor,
+        photoWidth: args?.photoWidth,
+        photoHeight: args?.photoHeight,
+        useCssSize: args?.useCssSize === true,
+        labelText: args?.labelText
+      };
+      createCameraEffect(element, config);
+    }).catch(err => {
+      console.warn('[camera effect error]', err);
+    });
+  });
+
   // === call (executa função nomeada definida pelo usuário) ===
   registerStickerAction('call', ({ args, ...ctx }) => {
     const fnName = args?.fn || args?.name; if (!fnName) return;
