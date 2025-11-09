@@ -19,6 +19,7 @@ async function loadContent(){
       caption: v.caption || '',
       date: v.date || '',
       image: v.image || '',
+      video: v.video || '',
       cards: Array.isArray(v.cards) ? v.cards : [],
       widgets: v.widgets || null,
       cover: v.cover || null,

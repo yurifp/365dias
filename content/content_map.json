@@ -120,19 +120,19 @@
   { "title": "Zé Lambidas", "caption": "Vulgo bolota", "image": "./assets/images/120125.JPEG", "date": "12.01.2025",
 
   "stickers": [
-    { "img_src": "./assets/images/120125-1.jpg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/120125-2.jpg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/120125-3.jpg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/120125-4.jpg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+    { "img_src": "./assets/images/120125-1.JPEG", "css": { "bottom": "-156%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/120125-2.JPEG", "css": { "bottom": "-276%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120125-3.JPEG", "css": { "bottom": "-376%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120125-4.JPEG", "css": { "bottom": "-476%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
   },
   { "title": "Coisas Gostosas", "caption": "Como você pode ver, essas duas coisas mais gostosas que eu gosto de comer", "image": "./assets/images/250125.jpg", "date": "25.01.2025"
 
   ,  "stickers": [
-    { "img_src": "./assets/images/250125-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/250125-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/250125-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/250125-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+    { "img_src": "./assets/stickers/sticker56.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/250125-1.jpg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/250125-3.jpg", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/250125-4.jpg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
 
@@ -142,24 +142,15 @@
   { "title": "Airbnb do empreendedor", "caption": "Uma relaxadinha depois do trabalho presencial 🫣", "image": "./assets/images/140225.JPEG", "date": "14.02.2025"
 
    , "stickers": [
-    { "img_src": "./assets/images/140225-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/140225-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/140225-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+    { "img_src": "./assets/stickers/sticker65.svg", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/140225-2.png", "css": { "bottom": "-276%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/280225.JPEG", "css": { "bottom": "-416%", "right": "8%", "width": "329px", "opacity": "0.9" } },
      { "img_src": "./assets/images/140225-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
 
 },
-  { "title": "El ranchito x Picanha Bloomin'Burguer", "caption": "‘nosso rolê padrão’, mas nunca é só mais um dia.", "image": "./assets/images/280225.JPEG", "date": "28.02.2025"
-
-   , "stickers": [
-    { "img_src": "./assets/images/280225-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/280225-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/280225-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/280225-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
-   ]
-
-},
+ 
 
   { "title": "Minha Cerejinha", "caption": "Um pôr do sol calmo, muitos risadas e a sensação de que aquele seria um dos dias que eu sempre lembraria com carinho", "image": "./assets/images/g280325-3.png", "date": "15.03.2025",
     "stickers": [
@@ -176,9 +167,7 @@
          "stickers": [
 
       { "img_src": "./assets/stickers/sticker70.svg", "css": { "bottom": "-183%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/stickers/sticker71.svg", "css": { "bottom": "-300%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/stickers/sticker32.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/stickers/sticker33.svg", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.8" } }
+     { "img_src": "./assets/stickers/sticker71.svg", "css": { "bottom": "-300%", "right": "8%", "width": "329px", "opacity": "0.8" } }
     ]
 
 },
@@ -221,8 +210,8 @@
 
          , "stickers": [
     { "img_src": "./assets/images/050525-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/050525-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/050525-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/050525.JPEG", "css": { "bottom": "-242%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/050525-3.JPEG", "css": { "bottom": "-386%", "right": "8%", "width": "329px", "opacity": "0.9" } },
      { "img_src": "./assets/images/050525-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
@@ -248,7 +237,7 @@
 
 
 },
-  { "title": "Cineminha Lilo & Stitch", "caption": "Dia de cinama com a mini querida", "image": "./assets/images/310525-1.JPEG", "date": "31.05.2025"
+  { "title": "Cineminha Lilo & Stitch", "caption": "Dia de cinama com a mini querida", "image": "./assets/images/310525.JPEG", "date": "31.05.2025"
 
                , "stickers": [
     { "img_src": "./assets/images/310525-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
@@ -263,10 +252,10 @@
   { "title": "Mellhor dia dos namorados💕", "caption": "Tenho certeza que você tem memorias molhadas incriveis aqui", "image": "./assets/images/120625-1.png", "date": "12.06.2025",
 
            "stickers": [
-    { "img_src": "./assets/images/120625-1.png", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/120625-2.png", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/120625-3.png", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/120625-4.png", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+    { "img_src": "./assets/images/120625.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/120625-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120625-3.JPEG", "css": { "bottom": "-357%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/120625-4.JPEG", "css": { "bottom": "-446%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
   },
@@ -319,7 +308,7 @@
                        , "stickers": [
     { "img_src": "./assets/images/060725-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
      { "img_src": "./assets/images/060725-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/060725-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/060725-3.JPEG", "css": { "bottom": "-375%", "right": "8%", "width": "329px", "opacity": "0.9" } },
      { "img_src": "./assets/images/060725-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
@@ -331,7 +320,8 @@
     { "img_src": "./assets/images/240725-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
      { "img_src": "./assets/images/240725-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
      { "img_src": "./assets/images/240725-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/240725-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+     { "img_src": "./assets/images/240725-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+          { "img_src": "./assets/images/240725-5.JPEG", "css": { "bottom": "-561%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
 
@@ -376,8 +366,8 @@
 
              , "stickers": [
     { "img_src": "./assets/images/130925-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/130925-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/130925-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/130925-2.jpg", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/130925-3.jpg", "css": { "bottom": "-366%", "right": "8%", "width": "329px", "opacity": "0.9" } },
      { "img_src": "./assets/images/130925-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
@@ -387,9 +377,9 @@
 
                , "stickers": [
     { "img_src": "./assets/images/140925-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/140925-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/140925-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
-     { "img_src": "./assets/images/140925-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
+     { "img_src": "./assets/images/140925-2.png", "css": { "bottom": "-250%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140925-3.png", "css": { "bottom": "-356%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+     { "img_src": "./assets/images/140925-4.png", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
 
@@ -397,8 +387,8 @@
   { "title": "🩵🍋", "caption": "Essa é a minha POV vendo meu neném", "image": "./assets/images/220925.JPEG", "date": "22.09.2025"
 
                    , "stickers": [
-    { "img_src": "./assets/images/220925-1.JPEG", "css": { "bottom": "-126%", "right": "8%", "width": "329px", "opacity": "0.8" } },
-     { "img_src": "./assets/images/220925-2.JPEG", "css": { "bottom": "-226%", "right": "8%", "width": "329px", "opacity": "0.9" } },
+    { "img_src": "./assets/images/220925-1.png", "css": { "bottom": "-186%", "right": "8%", "width": "329px", "opacity": "0.8" } },
+     { "img_src": "./assets/images/220925-2.JPEG", "css": { "bottom": "-286%", "right": "8%", "width": "329px", "opacity": "0.9" } },
      { "img_src": "./assets/images/220925-3.JPEG", "css": { "bottom": "-326%", "right": "8%", "width": "329px", "opacity": "0.9" } },
      { "img_src": "./assets/images/220925-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
@@ -428,6 +418,11 @@
      { "img_src": "./assets/images/251025-4.JPEG", "css": { "bottom": "-426%", "right": "8%", "width": "329px", "opacity": "0.9" } }
    ]
 
+
+},
+
+
+  { "title": "365dias ao seu lado", "caption": "", "video": "./assets/images/365dias.mp4"
 
 },
 

@@ -202,6 +202,24 @@ body::after{
 .frame-card .photo{ display:none; }
 .frame-card .frame-overlay{ display:none; }
 
+/* Fullscreen button for video slides */
+.video-fs-btn{
+  position: absolute;
+  top: 24px; /* inside the top frame area */
+  right: 24px;
+  z-index: 20;
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 8px;
+  background: rgba(255,255,255,.9);
+  color: #111;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+.video-fs-btn:hover{ transform: translateY(-1px); }
+.video-fs-btn:active{ transform: translateY(0); }
+
 /* Date chip over the polaroid frame (inside the card, responsive) */
 .date-chip{ position:absolute; left:50%; transform: translateX(-50%); z-index:12; pointer-events:none; }
 /* anchored to card bottom white area */
